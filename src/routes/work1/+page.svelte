@@ -1,21 +1,24 @@
 <script>
   import { onMount } from 'svelte'
-  import gsap from 'gsap'
-
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-
-  let main, smoother
+  import Lenis from '@studio-freight/lenis'
+  // import gsap from 'gsap'
 
   onMount(() => {
-    const ctx = gsap.context(() => {
-      smoother = ScrollSmoother.create({
-        smooth: 2, // seconds it takes to "catch up" to native scroll position
-        effects: false, // look for data-speed and data-lag attributes on elements and animate accordingly
-      })
-    }, main) // <- Scope!
-
-    return () => ctx.revert() // <- Cleanup!
+    console.log('work1 mounted')
   })
+
+  const lenis = new Lenis()
+
+  lenis.on('scroll', e => {
+    console.log('scrolling', e)
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
 </script>
 
 <svelte:head>
@@ -23,9 +26,9 @@
   <meta name="description" content="About this app" />
 </svelte:head>
 
-<div id="smooth-wrapper" bind:this={main}>
-  <div id="smooth-content">
-    <div class="page">
+<div id="smooth-wrapper" class="w-full">
+  <div id="smooth-content" class="flex flex-col items-center py-64">
+    <div class="page w-[40%]">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus atque
       quae maxime architecto ut sequi praesentium nam, beatae tempora! Explicabo
       maiores laboriosam dolore officia corrupti voluptate pariatur illum
@@ -129,7 +132,27 @@
 </div>
 
 <style>
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
   .page {
-    background-color: red;
+    background-color: cyan;
   }
 </style>
