@@ -1,22 +1,24 @@
 <script>
   import './styles.css'
-  import Header from './Header.svelte'
-  // import LocomotiveScrollProvider from 'svelte-locomotive-scroll'
-  // import 'locomotive-scroll/src/locomotive-scroll.scss'
+  import Lenis from '@studio-freight/lenis'
+  import { onMount } from 'svelte'
+
+  const lenis = new Lenis()
+
+  onMount(() => {
+    console.log('mounted layout')
+  })
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
 </script>
 
 <div class="app">
-  <!-- <Header /> -->
-  <!-- <LocomotiveScrollProvider
-    options={{
-      smooth: true,
-    }}
-    onLocationChange={scroll =>
-      scroll.scrollTo(0, { duration: 2, disableLerp: false })}
-    imageTarget={'.grid-item-media'}
-  > -->
   <main>
     <slot />
   </main>
-  <!-- </LocomotiveScrollProvider> -->
 </div>

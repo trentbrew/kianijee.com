@@ -55,15 +55,15 @@
 
 <style>
   svg {
-    transform: scale(1.6);
-    animation: fill 4s cubic-bezier(0.83, 0, 0.17, 1) forwards 20s;
+    transform: scale(1.53);
+    animation: fill 4s cubic-bezier(0.83, 0, 0.17, 1) forwards 13s;
   }
 
   #landing {
     width: 60vw;
     margin: 0px !important;
     padding: 0px !important;
-    --speed: 5.5s;
+    --speed: 5s;
     --ease: cubic-bezier(0.45, 0, 0.55, 1);
     --direction: forwards;
   }
@@ -75,60 +75,65 @@
   #landing path:nth-child(1) {
     stroke-dasharray: 19189.470703125;
     stroke-dashoffset: 19189.470703125;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 16s;
+    animation: line-animate var(--speed) var(--ease) var(--direction) 12.3s;
   }
 
   #landing path:nth-child(2) {
     stroke-dasharray: 16244.82421875;
     stroke-dashoffset: 16244.82421875;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 14s;
+    animation: line-animate 8s var(--ease) var(--direction) 10.2s;
   }
 
   #landing path:nth-child(3) {
     stroke-dasharray: 12958.078125;
     stroke-dashoffset: 12958.078125;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 17.3s;
+    animation: line-animate var(--speed) var(--ease) var(--direction) 13.3s;
   }
 
   #landing path:nth-child(4) {
     stroke-dasharray: 13171.6669921875;
     stroke-dashoffset: 13171.6669921875;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 15.3s;
+    animation: line-animate var(--speed) var(--ease) var(--direction) 11.3s;
   }
 
   #landing path:nth-child(5) {
     stroke-dasharray: 11553.45703125;
     stroke-dashoffset: 11553.45703125;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 15s;
+    animation: line-animate var(--speed) var(--ease) var(--direction) 11s;
   }
 
   #landing path:nth-child(6) {
     stroke-dasharray: 5230.50439453125;
     stroke-dashoffset: 5230.50439453125;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 17s;
+    animation: line-animate 4s var(--ease) var(--direction) 13s;
   }
 
   #landing path:nth-child(7) {
     stroke-dasharray: 5852.86181640625;
     stroke-dashoffset: 5852.86181640625;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 16.3s;
+    animation: line-animate var(--speed) var(--ease) var(--direction) 12.3s;
   }
 
   #landing path:nth-child(8) {
     stroke-dasharray: 3987.939453125;
     stroke-dashoffset: 3987.939453125;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 17s;
+    animation: line-animate 3s var(--ease) var(--direction) 15s;
   }
 
   #landing path:nth-child(9) {
     stroke-dasharray: 1580.0718994140625;
     stroke-dashoffset: 1580.0718994140625;
-    animation: line-animate var(--speed) var(--ease) var(--direction) 17s;
+    animation: line-animate var(--speed) var(--ease) var(--direction) 12.7s;
   }
 
   @keyframes line-animate {
+    from {
+      /* opacity: 0.7; */
+      /* transform: translateY(64px); */
+    }
     to {
-      opacity: 1;
+      /* transform: translateY(0px); */
+      /* opacity: 1; */
       stroke-dashoffset: 0;
     }
   }
@@ -136,7 +141,7 @@
   @keyframes fill {
     from {
       fill: transparent;
-      transform: scale(1.6);
+      transform: scale(1.53);
     }
     to {
       fill: #ffffff;

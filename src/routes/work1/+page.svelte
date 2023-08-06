@@ -1,24 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import Lenis from '@studio-freight/lenis'
-  // import gsap from 'gsap'
-
-  onMount(() => {
-    console.log('work1 mounted')
-  })
-
-  const lenis = new Lenis()
-
-  lenis.on('scroll', e => {
-    console.log('scrolling', e)
-  })
-
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
-  }
-
-  requestAnimationFrame(raf)
+  import gsap from 'gsap'
 </script>
 
 <svelte:head>
@@ -130,29 +112,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  html.lenis {
-    height: auto;
-  }
-
-  .lenis.lenis-smooth {
-    scroll-behavior: auto;
-  }
-
-  .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-
-  .lenis.lenis-stopped {
-    overflow: hidden;
-  }
-
-  .lenis.lenis-scrolling iframe {
-    pointer-events: none;
-  }
-
-  .page {
-    background-color: cyan;
-  }
-</style>

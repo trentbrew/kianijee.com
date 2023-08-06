@@ -1,6 +1,31 @@
 <script>
   import Image from '$lib/images/landing.gif'
+  import { onMount } from 'svelte'
   import Wordmark from '../Wordmark.svelte'
+  import gsap from 'gsap'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  // PARALLAX: #hero section should scroll at half the speed of the pag
+
+  onMount(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#backdrop',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+      },
+    })
+
+    tl.to('#hero', {
+      yPercent: -75,
+      ease: 'none',
+    })
+  })
 </script>
 
 <svelte:head>
@@ -9,27 +34,33 @@
 </svelte:head>
 
 <div class="flex w-full h-screen justify-center items-center">
-  <div class="absolute z-50">
+  <section id="hero" class="absolute z-50">
     <Wordmark />
-  </div>
-  <div id="hero-overlay" class="w-screen h-screen top-0 left-0 z-10 absolute" />
-  <div class="halftone-wrapper w-full">
-    <div class="halftone w-full flex justify-center items-center">
-      <img
-        class="h-screen w-screen object-cover"
-        alt="Zakia Rowlett"
-        src={Image}
-      />
+  </section>
+  <section id="backdrop">
+    <div
+      id="hero-overlay"
+      class="w-screen h-screen top-0 left-0 z-10 absolute"
+    />
+    <div class="halftone-wrapper w-full">
+      <div class="halftone w-full flex justify-center items-center">
+        <img
+          class="h-screen w-screen object-cover"
+          alt="Zakia Rowlett"
+          src={Image}
+        />
+      </div>
     </div>
-  </div>
+  </section>
 </div>
+<section class="h-[200vh] w-full" />
 
 <style>
   #hero-overlay {
     animation: darken 24s forwards;
   }
   img {
-    animation: animation-overlay 18s forwards;
+    animation: animation-overlay 12s forwards;
   }
   .halftone-wrapper {
     background: white;
@@ -46,7 +77,7 @@
 
   .halftone > * {
     filter: brightness(0.5) blur(3px);
-    animation: 14s animation-filter forwards;
+    animation: 14s animation-filter forwards cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .halftone::after {
@@ -68,7 +99,7 @@
     transform: rotate(11.25deg);
     transition: 2s ease-in-out transform;
     z-index: 1;
-    animation: 12s animation-overlay forwards;
+    animation: 12s animation-overlay forwards ease-out;
   }
 
   @keyframes darken {
@@ -96,7 +127,7 @@
       filter: brightness(1);
     }
     100% {
-      transform: rotate(0deg) scale(0.6);
+      transform: rotate(0deg) scale(0.7);
       filter: contrast(1.2);
     }
   }
