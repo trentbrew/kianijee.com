@@ -47,8 +47,7 @@
 
     tl.to('#hero', {
       yPercent: 4,
-      scale: 0.5,
-      opacity: 0,
+      scale: 0.2,
       ease: 'none',
     })
 
@@ -110,10 +109,10 @@
       </div>
     </div>
   </section>
-  <section class="bg-white z-50 w-full flex flex-col items-center pt-0">
+  <section class="bg-white z-50 w-full flex flex-col items-center pt-48">
     <Zoomer />
-    <div class="bg-red-500 h-[300vh] w-full" />
-    <div class="bg-blue-500 h-[300vh] w-full" />
+    <div class="bg-white h-[300vh] w-full" />
+    <div class="bg-gray-500 h-[500vh] w-full" />
   </section>
 </div>
 
