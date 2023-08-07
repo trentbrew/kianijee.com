@@ -5,6 +5,7 @@
   import Image from '$lib/images/landing.gif'
   import Wordmark from '$lib/components/Wordmark.svelte'
   import ScrollTrigger from 'gsap/ScrollTrigger'
+  import Zoomer from '$lib/components/Zoomer.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -25,11 +26,11 @@
 
     gsap.set('.marquee__inner', { xPercent: -50 })
 
-    let tween = gsap
+    gsap
       .to('.marquee__part', {
         xPercent: -100,
         repeat: -1,
-        duration: 5,
+        duration: 8,
         ease: 'linear',
       })
       .totalProgress(0.5)
@@ -44,13 +45,10 @@
       },
     })
 
-    tl.to(tween, {
-      timeScale: scroll.direction == 1 ? 1 : -1,
-    })
-
     tl.to('#hero', {
-      yPercent: -5,
-      scale: 0.8,
+      yPercent: 4,
+      scale: 0.5,
+      opacity: 0,
       ease: 'none',
     })
 
@@ -62,7 +60,7 @@
 </script>
 
 <svelte:head>
-  <title>About</title>
+  <title>Zakia Rowlett</title>
   <meta name="description" content="About this app" />
 </svelte:head>
 
@@ -71,7 +69,7 @@
     <section id="hero" class="absolute z-50">
       <Wordmark />
     </section>
-    <section id="backdrop" class="z-[-1]">
+    <section id="backdrop" class="z-[-1] absolute">
       <div
         id="hero-overlay"
         class="w-screen h-screen z-10 top-0 left-0 absolute"
@@ -79,6 +77,7 @@
       <div class="halftone-wrapper w-full">
         <div class="halftone w-full flex justify-center items-center">
           <img
+            id="backdrop-image"
             class="h-screen w-screen object-cover"
             alt="Zakia Rowlett"
             src={Image}
@@ -91,46 +90,46 @@
     <div class="marquee__inner" aria-hidden="true" ref="inner">
       <div class="marquee__part">
         GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION
+        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
       </div>
       <div class="marquee__part">
         GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION
+        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
       </div>
       <div class="marquee__part">
         GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION
+        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
       </div>
       <div class="marquee__part">
         GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION
+        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
       </div>
       <div class="marquee__part">
         GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION
+        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
       </div>
     </div>
   </section>
-  <section
-    class="h-[200vh] z-50 w-full bg-gray-200 flex flex-col items-center"
-  />
+  <section class="h-[200vh] bg-black z-50 w-full flex flex-col items-center">
+    <Zoomer />
+  </section>
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
   .marquee__part {
     flex-shrink: 0;
-    padding: 0 4px;
+    padding: 12px 0px;
     font-smooth: always;
+    font-family: 'League Gothic', sans-serif;
   }
 
   .marquee {
-    background: #3b7fff;
-    color: #eee;
+    background: black;
+    color: white;
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.667vw;
-    padding: 32px 0;
-
+    font-size: 3.667vw;
     position: relative;
     overflow: hidden;
   }
