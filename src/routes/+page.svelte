@@ -65,7 +65,7 @@
 </svelte:head>
 
 <div>
-  <div class="flex w-full h-screen justify-center items-center">
+  <div id="intro" class="flex w-full h-screen justify-center items-center">
     <section id="hero" class="absolute z-50">
       <Wordmark />
     </section>
@@ -110,13 +110,25 @@
       </div>
     </div>
   </section>
-  <section class="h-[200vh] bg-black z-50 w-full flex flex-col items-center">
+  <section
+    class="h-[200vh] bg-black z-50 w-full flex flex-col items-center pt-24"
+  >
+    <!-- <div id="banner1" class="bg-red-500 w-full h-[100px] bg-contain" /> -->
+    <!-- <div id="banner2" class="bg-blue-500 w-full h-[100px] bg-contain" /> -->
     <Zoomer />
   </section>
 </div>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+  #banner1 {
+    background-image: url('https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/banner1_mRFuAo59XZ.png?token=');
+  }
+
+  #banner2 {
+    background-image: url('https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/banner2_Hx0O2SaBNL.png?token=');
+  }
 
   .marquee__part {
     flex-shrink: 0;
@@ -142,9 +154,6 @@
     flex-direction: row;
   }
 
-  .spacer {
-    height: 150px;
-  }
   #hero-overlay {
     animation: darken 24s forwards;
   }
