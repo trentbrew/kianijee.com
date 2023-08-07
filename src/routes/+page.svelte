@@ -113,6 +113,7 @@
   <section class="bg-white z-50 w-full flex flex-col items-center pt-0">
     <Zoomer />
     <div class="bg-red-500 h-[300vh] w-full" />
+    <div class="bg-blue-500 h-[300vh] w-full" />
   </section>
 </div>
 

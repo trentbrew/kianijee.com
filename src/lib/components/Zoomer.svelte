@@ -9,8 +9,8 @@
     let LandingPageScrollTrigger = gsap.timeline({
       scrollTrigger: {
         trigger: '#scrollable-area',
-        start: '-15% 0%',
-        end: '500% 0%',
+        start: '-90% 0%',
+        end: '800% 0%',
         pin: '#scrollable-area',
         scrub: true,
       },
@@ -18,7 +18,7 @@
 
     LandingPageScrollTrigger.to(
       '#scrollable-area',
-      { transform: 'translateY(-200vh)' },
+      { transform: 'translateY(-300vh)' },
       0
     )
       .to('#ImgWrapper #img5', { transform: 'translateZ(1800px)' }, 0)
@@ -32,7 +32,7 @@
       // .to('#ImgWrapper #img4', { transform: 'translateZ(4000px)' }, 0)
       .to('#ImgWrapper #img3', { transform: 'translateZ(5000px)' }, 0)
       .to('#ImgWrapper #img1', { transform: 'translateZ(5500px)' }, 0)
-      .to('#ImgWrapper #img6', { transform: 'translateZ(8000px)' }, 0)
+      .to('#ImgWrapper #img6', { transform: 'translateZ(6000px)' }, 0)
   })
 </script>
 
@@ -97,7 +97,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    perspective: 2000px;
+    perspective: 3000px;
   }
 
   #ImgWrapper img {
@@ -160,7 +160,7 @@
     /* background: magenta; */
     z-index: 4;
     height: 60vh;
-    left: 17%;
+    left: 14%;
     bottom: 5%;
   }
   #ImgWrapper #img8 {
@@ -168,7 +168,7 @@
     z-index: 2;
     height: 50vh;
     left: 5%;
-    bottom: 36%;
+    bottom: 28%;
   }
   #ImgWrapper #img9 {
     /* background: yellow; */
@@ -182,6 +182,6 @@
     z-index: 1;
     height: 70vh;
     left: 20%;
-    bottom: 40%;
+    bottom: 45%;
   }
 </style>
