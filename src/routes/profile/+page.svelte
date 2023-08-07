@@ -1,13 +1,21 @@
 <script>
-  import Image from '$lib/images/landing.gif'
   import { onMount } from 'svelte'
-  import Wordmark from '../Wordmark.svelte'
+  import { scrollData } from '../store.js'
   import gsap from 'gsap'
+  import Image from '$lib/images/landing.gif'
+  import Wordmark from '../Wordmark.svelte'
   import ScrollTrigger from 'gsap/ScrollTrigger'
+  import Marquee from '../Marquee.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
-  // PARALLAX: #hero section should scroll at half the speed of the pag
+  let scroll
+
+  scrollData.subscribe(value => {
+    scroll = value
+  })
+
+  $: console.log(scroll)
 
   onMount(() => {
     const tl = gsap.timeline({
@@ -16,13 +24,12 @@
         start: 'top top',
         end: 'bottom top',
         scrub: true,
-        pin: true,
+        pin: false,
         anticipatePin: 1,
       },
     })
-
     tl.to('#hero', {
-      yPercent: -75,
+      yPercent: -25,
       ease: 'none',
     })
   })
@@ -53,7 +60,9 @@
     </div>
   </section>
 </div>
-<section class="h-[200vh] w-full" />
+<section class="h-[200vh] w-full">
+  <!-- <Marquee /> -->
+</section>
 
 <style>
   #hero-overlay {

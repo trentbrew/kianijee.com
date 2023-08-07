@@ -55,8 +55,8 @@
 
 <style>
   svg {
-    transform: scale(1.53);
-    animation: fill 4s cubic-bezier(0.83, 0, 0.17, 1) forwards 13s;
+    transform: scale(1.6);
+    animation: fill 4s cubic-bezier(0.83, 0, 0.17, 1) forwards 15s;
   }
 
   #landing {
@@ -141,7 +141,7 @@
   @keyframes fill {
     from {
       fill: transparent;
-      transform: scale(1.53);
+      transform: scale(1.6);
     }
     to {
       fill: #ffffff;
