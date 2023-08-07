@@ -9,18 +9,19 @@
     let LandingPageScrollTrigger = gsap.timeline({
       scrollTrigger: {
         trigger: '#scrollable-area',
-        start: '0% 0%',
-        end: '300% 0%',
+        start: '-15% 0%',
+        end: '500% 0%',
         pin: '#scrollable-area',
         scrub: true,
       },
     })
 
     LandingPageScrollTrigger.to(
-      '#ImgWrapper #img5',
-      { transform: 'translateZ(1800px)' },
+      '#scrollable-area',
+      { transform: 'translateY(-200vh)' },
       0
     )
+      .to('#ImgWrapper #img5', { transform: 'translateZ(1800px)' }, 0)
       .to('#ImgWrapper #img2', { transform: 'translateZ(2000px)' }, 0)
 
       .to('#ImgWrapper #img10', { transform: 'translateZ(2800px)' }, 0)
@@ -35,7 +36,7 @@
   })
 </script>
 
-<div id="scrollable-area">
+<div id="scrollable-area" class="absolute">
   <div id="ImgWrapper">
     <img
       id="img1"
@@ -96,7 +97,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    perspective: 1800px;
+    perspective: 2000px;
   }
 
   #ImgWrapper img {
