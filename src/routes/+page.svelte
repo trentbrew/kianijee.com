@@ -109,7 +109,7 @@
       </div>
     </div>
   </section>
-  <section class="bg-white z-50 w-full flex flex-col items-center pt-48">
+  <section class="bg-white z-50 w-full flex flex-col items-center pt-64">
     <Zoomer />
     <div class="bg-white h-[300vh] w-full" />
     <div class="bg-gray-500 h-[500vh] w-full" />
