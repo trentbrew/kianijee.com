@@ -152,7 +152,7 @@
     z-index: 8;
     height: 85vh;
     left: 42%;
-    bottom: -20%;
+    bottom: -18%;
   }
 
   #ImgWrapper #img7 {
@@ -166,7 +166,7 @@
     /* background: orange; */
     z-index: 2;
     height: 90vh;
-    left: -8%;
+    left: -6%;
     bottom: 25%;
   }
   #ImgWrapper #img9 {
