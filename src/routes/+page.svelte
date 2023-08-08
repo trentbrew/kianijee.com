@@ -6,6 +6,7 @@
   import Wordmark from '$lib/components/Wordmark.svelte'
   import ScrollTrigger from 'gsap/ScrollTrigger'
   import Zoomer from '$lib/components/Zoomer.svelte'
+  import Tracks from '$lib/components/Tracks.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -16,24 +17,16 @@
     ScrollTrigger.update()
   })
 
-  // let getRatio = el =>
-  //   window.innerHeight / (window.innerHeight + el.offsetHeight)
-
   onMount(() => {
-    // gsap.utils.toArray('section').forEach((section, i) => {
-    //   console.log(section, i)
-    // })
-
-    gsap.set('.marquee__inner', { xPercent: -50 })
-
-    gsap
-      .to('.marquee__part', {
-        xPercent: -100,
-        repeat: -1,
-        duration: 8,
-        ease: 'linear',
-      })
-      .totalProgress(0.5)
+    gsap.set('.marquee__inner', { xPercent: -50 }),
+      gsap
+        .to('.marquee__part', {
+          xPercent: -100,
+          repeat: -1,
+          duration: 8,
+          ease: 'linear',
+        })
+        .totalProgress(0.5)
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -111,8 +104,10 @@
   </section>
   <section class="bg-white z-50 w-full flex flex-col items-center pt-64">
     <Zoomer />
-    <div class="bg-white h-[300vh] w-full" />
-    <div class="bg-gray-500 h-[500vh] w-full" />
+    <div class="bg-white h-[250vh] w-full" />
+    <div class="bg-gray-500 h-[500vh] w-full">
+      <!-- <Tracks /> -->
+    </div>
   </section>
 </div>
 
@@ -143,9 +138,6 @@
     flex-direction: row;
   }
 
-  #hero-overlay {
-    animation: darken 24s forwards;
-  }
   img {
     animation: animation-overlay 12s forwards;
   }
@@ -189,13 +181,19 @@
     animation: 12s animation-overlay forwards ease-out;
   }
 
+  #hero-overlay {
+    animation: darken 21s forwards;
+  }
+
   @keyframes darken {
     0% {
       background: rgba(0, 0, 0, 0);
+      opacity: 0;
     }
     100% {
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: contrast(1);
+      background: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+      backdrop-filter: contrast(2) hue-rotate(0deg) saturate(2);
     }
   }
 

@@ -18,21 +18,20 @@
 
     LandingPageScrollTrigger.to(
       '#scrollable-area',
-      { transform: 'translateY(-450vh)' },
+      { transform: 'translateY(-350vh)' },
       0
     )
-      .to('#ImgWrapper #img5', { transform: 'translateZ(1800px)' }, 0)
+      .to('#ImgWrapper #img5', { transform: 'translateZ(1500px)' }, 0)
       // .to('#ImgWrapper #img2', { transform: 'translateZ(2000px)' }, 0)
-
-      .to('#ImgWrapper #img10', { transform: 'translateZ(2800px)' }, 0)
+      .to('#ImgWrapper #img10', { transform: 'translateZ(2000px)' }, 0)
       .to('#ImgWrapper #img8', { transform: 'translateZ(3000px)' }, 0)
       // .to('#ImgWrapper #img2', { transform: 'translateZ(3500px)' }, 0)
       .to('#ImgWrapper #img9', { transform: 'translateZ(3500px)' }, 0)
-      .to('#ImgWrapper #img7', { transform: 'translateZ(4000px)' }, 0)
+      .to('#ImgWrapper #img7', { transform: 'translateZ(5500px)' }, 0)
       // .to('#ImgWrapper #img4', { transform: 'translateZ(4000px)' }, 0)
-      .to('#ImgWrapper #img1', { transform: 'translateZ(4500px)' }, 0)
-      .to('#ImgWrapper #img3', { transform: 'translateZ(5000px)' }, 0)
-      .to('#ImgWrapper #img6', { transform: 'translateZ(5500px)' }, 0)
+      .to('#ImgWrapper #img3', { transform: 'translateZ(4600px)' }, 0)
+      .to('#ImgWrapper #img1', { transform: 'translateZ(6000px)' }, 0)
+      .to('#ImgWrapper #img6', { transform: 'translateZ(7000px)' }, 0)
   })
 </script>
 
@@ -97,7 +96,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    perspective: 2500px;
+    perspective: 4000px;
   }
 
   #ImgWrapper img {
@@ -167,14 +166,14 @@
     /* background: orange; */
     z-index: 2;
     height: 90vh;
-    left: -5%;
+    left: -8%;
     bottom: 25%;
   }
   #ImgWrapper #img9 {
     /* background: yellow; */
     z-index: 3;
     height: 90vh;
-    right: -5%;
+    right: -10%;
     bottom: 30%;
   }
   #ImgWrapper #img10 {
