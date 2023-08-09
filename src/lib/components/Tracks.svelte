@@ -19,9 +19,6 @@
 
     gsap.utils.toArray('.demo-wrapper section').forEach((section, index) => {
       const w = section.querySelector('.wrapper')
-
-      console.log(w.scrollWidth, w.offsetWidth)
-
       const [x, xEnd] =
         index % 2 ? ['10%', w.scrollWidth * -1] : [w.scrollWidth * -1, 0]
 

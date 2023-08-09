@@ -103,8 +103,10 @@
     </div>
   </section>
   <section class="bg-white z-50 w-full flex flex-col items-center pt-36">
-    <Zoomer />
-    <div class="bg-white h-[250vh] w-full" />
+    <div class="w-full z-[2]">
+      <Zoomer />
+    </div>
+    <div class="bg-white h-[250vh] w-full z-[-1]" />
     <div class="h-[500vh] w-full z-[1]">
       <Tracks />
     </div>
