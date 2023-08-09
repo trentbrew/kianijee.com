@@ -107,8 +107,11 @@
       <Zoomer />
     </div>
     <div class="bg-white h-[250vh] w-full z-[-1]" />
-    <div class="h-[500vh] w-full z-[1]">
+    <div class="w-full z-[1]">
       <Tracks />
+    </div>
+    <div class="bg-black w-full h-screen flex justify-center items-center">
+      video
     </div>
   </section>
 </div>
