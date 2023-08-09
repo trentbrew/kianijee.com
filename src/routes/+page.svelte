@@ -59,7 +59,7 @@
 
 <div>
   <Menu />
-  <div id="intro" class="flex w-full h-screen justify-center items-center">
+  <section id="_home" class="flex w-full h-screen justify-center items-center">
     <section id="hero" class="absolute z-50">
       <Wordmark />
     </section>
@@ -79,7 +79,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </section>
   <section class="marquee">
     <div class="marquee__inner" aria-hidden="true" ref="inner">
       <div class="marquee__part">
@@ -109,10 +109,11 @@
       <Zoomer />
     </div>
     <div class="bg-white h-[250vh] w-full z-[-1]" />
-    <div class="w-full z-[1]">
+    <section id="_work" class="w-full z-[1]">
       <Tracks />
-    </div>
-    <div
+    </section>
+    <section
+      id="_about"
       class="bg-gray-200 w-full h-screen flex justify-center items-center bg-fixed bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
     />
   </section>

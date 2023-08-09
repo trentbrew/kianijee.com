@@ -3,9 +3,10 @@
   import gsap from 'gsap'
 
   const items = [
-    { name: 'Home', link: '#' },
-    { name: 'About', link: '#_about' },
+    { name: 'Home', link: '#_home' },
     { name: 'Work', link: '#_work' },
+    { name: 'About', link: '#_about' },
+    { name: 'Shop', link: '#_shop' },
     { name: 'Contact', link: '#_contact' },
   ]
 
@@ -21,13 +22,13 @@
     })
     setTimeout(() => {
       items.forEach((item, i) => animateItem(i, true))
-    }, 600)
+    }, 200)
   }
 
   function closeMenu() {
     gsap.to('#menu-backdrop', {
       duration: 0.6,
-      delay: 1,
+      delay: 0.4,
       css: {
         scale: 1.2,
       },
@@ -35,7 +36,7 @@
     items.forEach((item, i) => animateItem(i, false))
     setTimeout(() => {
       open = false
-    }, 1600)
+    }, 800)
   }
 
   function toggleMenu() {
@@ -43,15 +44,38 @@
     else openMenu()
   }
 
+  function handleAnchorClick(event) {
+    closeMenu()
+    event.preventDefault()
+    const link = event.currentTarget
+    const anchorId = new URL(link.href).hash.replace('#', '')
+    const anchor = document.getElementById(anchorId)
+    setTimeout(() => {
+      window.scrollTo({
+        top: anchor.offsetTop,
+        behavior: 'smooth',
+      })
+    }, 600)
+  }
+
   function animateItem(index, enter) {
-    gsap.to(`.menu-item-${index}`, {
-      duration: 0.6,
-      delay: index ? 0.15 * index : 0,
-      css: {
-        // opacity: enter ? 1 : 0,
-        marginLeft: enter ? 0 : -500,
+    gsap.fromTo(
+      `.menu-item-${index}`,
+      {
+        duration: 0.6,
+        delay: enter ? (index ? 0.12 * index : 0) : 0.15,
+        css: {
+          opacity: enter ? 0 : 1,
+        },
       },
-    })
+      {
+        duration: 0.6,
+        delay: enter ? (index ? 0.12 * index : 0) : 0.15,
+        css: {
+          opacity: enter ? 1 : 0,
+        },
+      }
+    )
   }
 </script>
 
@@ -63,36 +87,35 @@
 <div
   id="menu-backdrop"
   class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300 {open
-    ? 'backdrop-invert backdrop-brightness-[0.2]'
+    ? 'bg-white/80 backdrop-invert'
     : ''}"
   style="transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);"
 />
-<!-- {#if open} -->
-<div
-  id="menu-items"
-  class="fixed w-screen h-screen top-0 left flex justify-start items-center pl-32 z-[100]"
->
-  <ul>
-    {#each items as item, i}
-      <li class="menu-item ease-in-out">
-        <a
-          href={item.link}
-          class="{`menu-item-${i}`} text-2xl font-bold text-black hover:underline cursor-pointer ml-[-500px]"
-          on:click|preventDefault={closeMenu}
-        >
-          {item.name}
-        </a>
-      </li>
-    {/each}
-  </ul>
-</div>
-
-<!-- {/if} -->
+{#if open}
+  <div
+    id="menu-items"
+    class="fixed w-screen h-screen top-0 left flex justify-end items-end pr-8 pb-8 z-[100] text-right"
+  >
+    <ul>
+      {#each items as item, i}
+        <li class="ease-in-out">
+          <a
+            href={item.link}
+            class="menu-item {`menu-item-${i}`} text-2xl font-bold text-black hover:underline cursor-pointer opacity-0"
+            on:click={handleAnchorClick}
+          >
+            {item.name}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+{/if}
 
 <style>
   a {
     font-family: 'League Gothic', sans-serif;
-    font-size: 10rem;
+    font-size: 6rem;
     line-height: 1.2;
     font-weight: 400;
   }
