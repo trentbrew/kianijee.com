@@ -7,6 +7,7 @@
   import ScrollTrigger from 'gsap/ScrollTrigger'
   import Zoomer from '$lib/components/Zoomer.svelte'
   import Tracks from '$lib/components/Tracks.svelte'
+  import Menu from '$lib/components/Menu.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -39,7 +40,7 @@
     })
 
     tl.to('#hero', {
-      yPercent: 4,
+      yPercent: 10,
       scale: 0.2,
       ease: 'none',
     })
@@ -57,6 +58,7 @@
 </svelte:head>
 
 <div>
+  <Menu />
   <div id="intro" class="flex w-full h-screen justify-center items-center">
     <section id="hero" class="absolute z-50">
       <Wordmark />
@@ -110,9 +112,9 @@
     <div class="w-full z-[1]">
       <Tracks />
     </div>
-    <div class="bg-black w-full h-screen flex justify-center items-center">
-      video
-    </div>
+    <div
+      class="bg-gray-200 w-full h-screen flex justify-center items-center bg-fixed bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
+    />
   </section>
 </div>
 

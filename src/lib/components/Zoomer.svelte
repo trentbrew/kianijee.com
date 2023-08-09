@@ -23,7 +23,7 @@
     )
       .to('#ImgWrapper #img5', { transform: 'translateZ(1500px)' }, 0)
       // .to('#ImgWrapper #img2', { transform: 'translateZ(2000px)' }, 0)
-      .to('#ImgWrapper #img10', { transform: 'translateZ(2000px)' }, 0)
+      // .to('#ImgWrapper #img10', { transform: 'translateZ(2000px)' }, 0)
       .to('#ImgWrapper #img8', { transform: 'translateZ(3000px)' }, 0)
       // .to('#ImgWrapper #img2', { transform: 'translateZ(3500px)' }, 0)
       .to('#ImgWrapper #img9', { transform: 'translateZ(3500px)' }, 0)

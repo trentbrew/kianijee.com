@@ -40,7 +40,7 @@
   <div class="demo-wrapper">
     <section class="demo-text">
       <div class="wrapper text">
-        <span class="flex w-[100vw] justify-end py-12">PROJECTS</span>
+        <span class="flex w-[100vw] justify-end py-12">WORK</span>
       </div>
     </section>
     <section class="demo-gallery">
