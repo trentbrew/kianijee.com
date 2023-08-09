@@ -32,7 +32,7 @@
       scrollTrigger: {
         start: 'top top',
         end: 'bottom top',
-        scrub: true,
+        scrub: 0.5,
         pin: false,
         anticipatePin: 1,
       },
@@ -105,15 +105,13 @@
   <section class="bg-white z-50 w-full flex flex-col items-center pt-36">
     <Zoomer />
     <div class="bg-white h-[250vh] w-full" />
-    <div class="bg-gray-500 h-[500vh] w-full">
-      <!-- <Tracks /> -->
+    <div class="h-[500vh] w-full z-[1]">
+      <Tracks />
     </div>
   </section>
 </div>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
-
   .marquee__part {
     flex-shrink: 0;
     padding: 12px 0px;

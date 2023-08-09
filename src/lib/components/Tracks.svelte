@@ -1,59 +1,51 @@
 <script>
+  import gsap from 'gsap'
+  import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { onMount } from 'svelte'
+
   gsap.registerPlugin(ScrollTrigger)
 
-  const images = gsap.utils.toArray('img')
-  const loader = document.querySelector('.loader--text')
-  const updateProgress = instance =>
-    (loader.textContent = `${Math.round(
-      (instance.progressedCount * 100) / images.length
-    )}%`)
+  onMount(() => {
+    console.log('tracks mounted')
 
-  const showDemo = () => {
-    document.body.style.overflow = 'auto'
-    document.scrollingElement.scrollTo(0, 0)
-    gsap.to(document.querySelector('.loader'), { autoAlpha: 0 })
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        start: '0% 0%',
+        end: '200% 0%',
+        scrub: 0.5,
+        pin: true,
+      },
+    })
 
-    gsap.utils.toArray('section').forEach((section, index) => {
+    gsap.utils.toArray('.demo-wrapper section').forEach((section, index) => {
       const w = section.querySelector('.wrapper')
+
+      console.log(w.scrollWidth, w.offsetWidth)
+
       const [x, xEnd] =
-        index % 2
-          ? ['100%', (w.scrollWidth - section.offsetWidth) * -1]
-          : [w.scrollWidth * -1, 0]
-      gsap.fromTo(
+        index % 2 ? ['10%', w.scrollWidth * -1] : [w.scrollWidth * -1, 0]
+
+      tl.fromTo(
         w,
         { x },
         {
           x: xEnd,
           scrollTrigger: {
             trigger: section,
-            scrub: 0.5,
           },
         }
       )
     })
-  }
+  })
 </script>
 
 <div>
-  <div class="loader df aic jcc">
-    <div>
-      <h1>Loading</h1>
-      <h2 class="loader--text">0%</h2>
-    </div>
-  </div>
-
   <div class="demo-wrapper">
-    <header class="df aic jcc">
-      <div>
-        <h1>ScrollTrigger</h1>
-        <h2>demo</h2>
-      </div>
-    </header>
-
     <section class="demo-text">
-      <div class="wrapper text">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+      <div class="wrapper text">
+        <span class="flex w-[100vw] justify-end py-12">PROJECTS</span>
+      </div>
     </section>
-
     <section class="demo-gallery">
       <ul class="wrapper">
         <li>
@@ -106,21 +98,62 @@
         </li>
       </ul>
     </section>
-
-    <section class="demo-text">
-      <div class="wrapper text">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+    <section class="demo-gallery">
+      <ul class="wrapper">
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            src="https://source.unsplash.com/random/1240x874?sig=67"
+            alt=""
+          />
+        </li>
+      </ul>
     </section>
   </div>
 </div>
 
 <style>
-  h1 {
-    font-size: 5rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-
   img {
     width: 100%;
     height: auto;
@@ -175,8 +208,9 @@
   }
 
   .demo-text .text {
-    font-size: clamp(8rem, 15vw, 16rem);
+    font-family: 'League Gothic', sans-serif;
+    font-size: 8rem;
     line-height: 1;
-    font-weight: 900;
+    /* font-weight: 900; */
   }
 </style>

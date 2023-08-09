@@ -4,7 +4,9 @@
 </script>
 
 <div class="w-screen h-screen bg-white">
-  <!-- <Zoomer /> -->
-  <Tracks />
-  <section class="h-[200vh] w-full bg-red-500">more content</section>
+  <section class="h-[100vh] w-full bg-gray-300">more content</section>
+  <div>
+    <Tracks />
+  </div>
+  <section class="h-[400vh] w-full bg-gray-300">more content</section>
 </div>
