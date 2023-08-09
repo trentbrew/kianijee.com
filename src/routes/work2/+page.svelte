@@ -1,5 +1,4 @@
 <script>
-  import Box from '$lib/components/Box.svelte'
 </script>
 
 <svelte:head>
@@ -7,6 +6,4 @@
   <meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="w-full h-screen flex flex-col justify-center items-center">
-  <Box color="green" />
-</div>
+<div class="w-full h-screen flex flex-col justify-center items-center" />
