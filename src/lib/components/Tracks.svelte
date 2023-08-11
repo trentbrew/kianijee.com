@@ -6,8 +6,6 @@
   gsap.registerPlugin(ScrollTrigger)
 
   onMount(() => {
-    console.log('tracks mounted')
-
     const tl = gsap.timeline({
       scrollTrigger: {
         start: '0% 0%',

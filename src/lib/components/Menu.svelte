@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import gsap from 'gsap'
+  import { scrollData } from '../../routes/store.js'
 
   const items = [
     { name: 'Home', link: '#_home' },
@@ -11,6 +12,31 @@
   ]
 
   let open = false
+  let scroll = 0
+
+  $: scroll = $scrollData.scroll
+
+  $: {
+    if (scroll > 0) {
+      gsap.to('#menu-toggle', {
+        css: {
+          scale: 1,
+          opacity: 1,
+        },
+      })
+    }
+  }
+
+  onMount(() => {
+    setTimeout(() => {
+      gsap.to('#menu-toggle', {
+        css: {
+          scale: 1,
+          opacity: 1,
+        },
+      })
+    }, 18000)
+  })
 
   function openMenu() {
     open = true
@@ -28,7 +54,7 @@
   function closeMenu() {
     gsap.to('#menu-backdrop', {
       duration: 0.6,
-      delay: 0.4,
+      delay: 0.2,
       css: {
         scale: 1.2,
       },
@@ -77,12 +103,17 @@
       }
     )
   }
+
+  function handleKeydown(e) {
+    if (e.key === 'Enter') toggleMenu()
+  }
 </script>
 
 <div
   id="menu-toggle"
-  class="bg-white/10 fixed backdrop-invert backdrop-blur-[12px] rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300"
+  class="bg-white/10 fixed backdrop-invert backdrop-blur-[12px] rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300 opacity-0"
   on:click={toggleMenu}
+  on:keydown={handleKeydown}
 />
 <div
   id="menu-backdrop"
