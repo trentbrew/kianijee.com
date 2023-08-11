@@ -22,13 +22,9 @@
       0
     )
       .to('#ImgWrapper #img5', { transform: 'translateZ(1500px)' }, 0)
-      // .to('#ImgWrapper #img2', { transform: 'translateZ(2000px)' }, 0)
-      // .to('#ImgWrapper #img10', { transform: 'translateZ(2000px)' }, 0)
       .to('#ImgWrapper #img8', { transform: 'translateZ(3000px)' }, 0)
-      // .to('#ImgWrapper #img2', { transform: 'translateZ(3500px)' }, 0)
       .to('#ImgWrapper #img9', { transform: 'translateZ(3500px)' }, 0)
       .to('#ImgWrapper #img7', { transform: 'translateZ(5500px)' }, 0)
-      // .to('#ImgWrapper #img4', { transform: 'translateZ(4000px)' }, 0)
       .to('#ImgWrapper #img3', { transform: 'translateZ(4600px)' }, 0)
       .to('#ImgWrapper #img1', { transform: 'translateZ(6000px)' }, 0)
       .to('#ImgWrapper #img6', { transform: 'translateZ(7000px)' }, 0)
@@ -42,21 +38,11 @@
       src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/qqdd0un1v32mr8g/website_assets_12_snh0kkc5Fb.png?token="
       alt=""
     />
-    <!-- <img
-      id="img2"
-      src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/qqdd0un1v32mr8g/website_assets_13_oHArlDGp4l.png?token="
-      alt=""
-    /> -->
     <img
       id="img3"
       src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/qqdd0un1v32mr8g/website_assets_19_jZolUmn8r3.png?token="
       alt=""
     />
-    <!-- <img
-      id="img4"
-      src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/qqdd0un1v32mr8g/website_assets_07_MC6g2pg4GU.png?token="
-      alt=""
-    /> -->
     <img
       id="img5"
       src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/3q5ywd9ujp2mt8a/halftone_5LxkXvUS1o.png?token="
@@ -82,11 +68,6 @@
       src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/qqdd0un1v32mr8g/website_assets_17_7ujxykx7bE.png?token="
       alt=""
     />
-    <!-- <img
-      id="img10"
-      src="https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/qqdd0un1v32mr8g/website_assets_19_jZolUmn8r3.png?token="
-      alt=""
-    /> -->
   </div>
 </div>
 
@@ -101,24 +82,14 @@
 
   #ImgWrapper img {
     position: absolute;
-    /* opacity: 0.3; */
   }
 
   #ImgWrapper #img1 {
-    /* background: red; */
     z-index: 7;
     height: 55vh;
     bottom: 40%;
     right: 18%;
   }
-
-  /* #ImgWrapper #img2 {
-    background: green;
-    z-index: 0;
-    height: 42vh;
-    bottom: 5%;
-    left: 5%;
-  } */
 
   #ImgWrapper #img3 {
     /* background: cyan; */
@@ -127,14 +98,6 @@
     bottom: 45%;
     right: 36%;
   }
-
-  /* #ImgWrapper #img4 {
-    background: blue;
-    z-index: 5;
-    height: 30vh;
-    bottom: 45%;
-    left: 30%;
-  } */
 
   #ImgWrapper #img5 {
     /* background: purple; */

@@ -105,16 +105,19 @@
     <div class="w-full z-[2] pointer-events-none">
       <Zoomer />
     </div>
-    <div class="bg-white h-[230vh] w-full z-[-1]" />
-    <section id="_work" class="w-full z-[1]">
+    <div class="h-[230vh] w-full bg-white z-[1]" />
+    <section id="_work" class="w-full z-[1] bg-white">
       <Tracks />
     </section>
-    <section id="_about" class="w-full">
+    <section id="_about" class="w-full h-[300vh]">
       <div
         id="profile-image"
-        class="bg-gray-200 w-full h-[300vh] flex justify-center items-center bg-cover"
+        class="w-full h-full flex justify-center items-center bg-cover"
         style={`background-image: url(${Profile}); ${parallax}`}
       >
+        <div class="absolute w-full h-[300vh]">
+          <div class="noisy" />
+        </div>
         some content
       </div>
     </section>
