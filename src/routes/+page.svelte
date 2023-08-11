@@ -18,7 +18,6 @@
   $: parallax = `background-position: 0px ${$scroll.value * 0.5}px;`
 
   onMount(() => {
-    console.log('profile image: ', Profile)
     gsap.set('.marquee__inner', { xPercent: -50 }),
       gsap
         .to('.marquee__part', {
@@ -38,13 +37,11 @@
         anticipatePin: 1,
       },
     })
-
     tl.to('#hero', {
       yPercent: 10,
       scale: 0.2,
       ease: 'none',
     })
-
     tl.to('#backdrop', {
       yPercent: 200,
       ease: 'none',
@@ -80,7 +77,7 @@
       </div>
     </section>
   </section>
-  <section class="marquee">
+  <section id="marquee" class="marquee">
     <div class="marquee__inner" aria-hidden="true" ref="inner">
       <div class="marquee__part">
         GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER

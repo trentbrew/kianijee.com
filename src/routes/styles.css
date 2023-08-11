@@ -35,3 +35,56 @@ html.lenis {
 .page {
   background-color: cyan;
 }
+
+.noisy {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 400%;
+  height: 400vh;
+  background: transparent url("https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/4cp1685jgd9acd6/noise_GUMlqIzVZ2.png?token=") repeat 0 0;
+  background-size: 8%;
+  background-repeat: repeat;
+  animation: 1500ms infinite noise ease;
+  pointer-events: none;
+  opacity: 1;
+  filter: brightness(1.3) contrast(2) blur(1.2px);
+  will-change: background-position;
+}
+
+@keyframes noise {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  10% {
+    background-position: -10% -20%;
+  }
+  20% {
+    background-position: -30% 10%;
+  }
+  30% {
+    background-position: 14% -50%;
+  }
+  40% {
+    background-position: 40% 100%;
+  }
+  50% {
+    background-position: -50% 20%;
+    opacity: 0.75;
+  }
+  60% {
+    background-position: 30% 10%;
+  }
+  70% {
+    background-position: 0 30%;
+  }
+  80% {
+    background-position: 50% 70%;
+  }
+  90% {
+    background-position: -20% 20%;
+  }
+}

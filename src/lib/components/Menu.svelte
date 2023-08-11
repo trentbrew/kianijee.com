@@ -117,12 +117,12 @@
   on:keydown={handleKeydown}
 >
   {#if open}
-    <div class={`pointer-events-none ${open ? 'invert' : ''}`}>
-      <Icon name="close" />
+    <div class={`pointer-events-none`}>
+      <Icon color="white" name="close" />
     </div>
   {:else}
-    <div class={`pointer-events-none ${open ? 'invert' : ''}`}>
-      <Icon name="menu" />
+    <div class={`pointer-events-none`}>
+      <Icon color="black" name="menu" />
     </div>
   {/if}
 </div>
