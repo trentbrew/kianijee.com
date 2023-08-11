@@ -132,9 +132,9 @@
     pointer-events: none;
     user-select: none;
     border-radius: 100%;
-    background: #00000000;
+    background: white;
     z-index: 55555555;
-    backdrop-filter: invert(1);
+    mix-blend-mode: difference;
     will-change: transform;
     transition: margin 0.4s ease, opacity 0.4s ease, width 0.4s ease,
       height 0.4s ease, transform 0s;
@@ -146,7 +146,7 @@
     margin-left: -12px;
     margin-top: -12px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease, transform 0.2s;
+      opacity 0.4s ease, transform 0.1s;
   }
 
   .g-cursor_hover .g-cursor__point {
@@ -164,7 +164,7 @@
     margin-left: -32px;
     margin-top: -32px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease, transform 0.2s;
+      opacity 0.4s ease, transform 0.1s;
   }
 
   .g-cursor_hint .g-cursor__point {
@@ -172,7 +172,6 @@
     height: 300px;
     margin-left: -150px;
     margin-top: -150px;
-    backdrop-filter: invert(1);
     transition-delay: 1s;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
@@ -184,6 +183,6 @@
     margin-left: -140px;
     margin-top: -140px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease, transform 0.2s;
+      opacity 0.4s ease, transform 0.1s;
   }
 </style>
