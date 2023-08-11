@@ -1,6 +1,6 @@
 <script>
   export let name = 'star'
-  export let color = 'black'
+  export let color = 'gray'
   export let size = 24
 
   let svg
@@ -17,7 +17,7 @@
   }
 </script>
 
-<div style={`width: ${size}px`}>
+<div style={`width: ${size}px; color: ${color}`}>
   {#if svg}{@html svg}{/if}
 </div>
 

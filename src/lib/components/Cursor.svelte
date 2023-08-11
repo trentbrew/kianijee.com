@@ -1,5 +1,6 @@
 <script setup>
   import { onMount } from 'svelte'
+  import Icon from '$lib/components/Icon.svelte'
 
   let state = {
     xChild: 0,
@@ -87,10 +88,11 @@
     class="g-cursor__point flex justify-center items-center"
     style={state.cursorPoint}
   >
-    {#if state.hint || state.icon}
-      <span>
-        {state.hint ?? state.icon}
-      </span>
+    {#if state.hint}
+      <span>{state.hint}</span>
+    {/if}
+    {#if state.icon}
+      <span><Icon name={state.icon} /></span>
     {/if}
   </div>
 </div>
@@ -150,7 +152,7 @@
     margin-left: -12px;
     margin-top: -12px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease, transform 0.1s;
+      opacity 0.4s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .g-cursor_hover .g-cursor__point {
@@ -168,7 +170,7 @@
     margin-left: -32px;
     margin-top: -32px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease, transform 0.1s;
+      opacity 0.4s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .g-cursor_hint .g-cursor__point {
@@ -182,11 +184,11 @@
   }
 
   .g-cursor_click_hint .g-cursor__point {
-    width: 80px;
-    height: 80px;
-    margin-left: -40px;
-    margin-top: -40px;
+    width: 180px;
+    height: 180px;
+    margin-left: -90px;
+    margin-top: -90px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease, transform 0.1s;
+      opacity 0.4s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 </style>

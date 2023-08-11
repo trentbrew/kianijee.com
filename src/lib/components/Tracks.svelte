@@ -64,7 +64,7 @@
       </div>
     </section>
     <div data-hover-hint={hints[0]}>
-      <section class="demo-gallery" data-hint={hints[0]}>
+      <section class="demo-gallery" data-hover-hint={hints[0]}>
         <a href="#">
           <ul class="wrapper">
             {#each images[0] as image}
