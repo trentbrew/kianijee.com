@@ -9,19 +9,19 @@
     [
       'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_6_lrKGt0qBH5.png?token=',
       'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_7_m5NDjDSFy5.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_1_ZKuFwXr1AL.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_2_4NZdIGJ1fw.png?token=',
       'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_5_eASPanmpLW.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_1_ZKuFwXr1AL.png?token=',
+      // 'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_2_4NZdIGJ1fw.png?token=',
     ],
     [
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_1_jEoWPrjyA6.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_2_PA4qF3XeQL.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_3_a8r9ooG8Ky.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_6_mZn1IrcDSs.png?token=',
       'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_4_vk7gpSo73R.png?token=',
       'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_5_ypK9TBM2jx.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_6_mZn1IrcDSs.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_7_Ob4S78DKhL.png?token=',
-      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_8_ZrRdbEGW0I.png?token=',
+      // 'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_1_jEoWPrjyA6.png?token=',
+      // 'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_2_PA4qF3XeQL.png?token=',
+      // 'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_3_a8r9ooG8Ky.png?token=',
+      // 'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_7_Ob4S78DKhL.png?token=',
+      // 'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_8_ZrRdbEGW0I.png?token=',
     ],
   ]
 
@@ -29,7 +29,7 @@
     const tl = gsap.timeline({
       scrollTrigger: {
         start: '0% 0%',
-        end: '200% 0%',
+        end: '100% 0%',
         scrub: 0.5,
         pin: true,
       },
@@ -38,7 +38,7 @@
     gsap.utils.toArray('.demo-wrapper section').forEach((section, index) => {
       const w = section.querySelector('.wrapper')
       const [x, xEnd] =
-        index % 2 ? ['100%', w.scrollWidth * -1] : [w.scrollWidth * -1, 0]
+        index % 2 ? ['200%', w.scrollWidth * -1] : [w.scrollWidth * -1, 0]
 
       tl.fromTo(
         w,
@@ -61,28 +61,41 @@
         <span class="flex w-[100vw] justify-end py-12">WORK</span>
       </div>
     </section>
-    <section class="demo-gallery">
-      <ul class="wrapper">
-        {#each images[0] as image}
-          <li>
-            <img src={image} alt="" />
-          </li>
-        {/each}
-      </ul>
+    <section class="demo-gallery hoverable">
+      <a href="#" class="hoverable">
+        <ul class="wrapper hoverable">
+          {#each images[0] as image}
+            <li class="hoverable">
+              <img src={image} class="hoverable" />
+            </li>
+          {/each}
+        </ul>
+      </a>
     </section>
-    <section class="demo-gallery">
-      <ul class="wrapper">
-        {#each images[1] as image}
-          <li>
-            <img src={image} alt="" />
-          </li>
-        {/each}
-      </ul>
+    <section class="demo-gallery hoverable">
+      <a href="#" class="hoverable">
+        <ul class="wrapper hoverable">
+          {#each images[1] as image}
+            <li class="hoverable">
+              <img src={image} class="hoverable" />
+            </li>
+          {/each}
+        </ul>
+      </a>
     </section>
   </div>
 </div>
 
 <style>
+  .demo-gallery {
+    /* filter: grayscale(1);/ */
+    cursor: pointer;
+    transition: 300ms;
+  }
+  .demo-gallery:hover {
+    /* filter: grayscale(0); */
+    transform: scale(0.95);
+  }
   img {
     width: 100%;
     aspect-ratio: 16/9;

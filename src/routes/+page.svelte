@@ -1,13 +1,14 @@
 <script>
   import { onMount } from 'svelte'
-  import { scrollData } from './store.js'
   import gsap from 'gsap'
-  import Image from '$lib/images/landing.gif'
-  import Wordmark from '$lib/components/Wordmark.svelte'
   import ScrollTrigger from 'gsap/ScrollTrigger'
+  import { scrollData } from './store.js'
+
+  import Menu from '$lib/components/Menu.svelte'
+  import Hero from '$lib/images/landing.gif'
+  import Wordmark from '$lib/components/Wordmark.svelte'
   import Zoomer from '$lib/components/Zoomer.svelte'
   import Tracks from '$lib/components/Tracks.svelte'
-  import Menu from '$lib/components/Menu.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -74,7 +75,7 @@
             id="backdrop-image"
             class="h-screen w-screen object-cover"
             alt="Zakia Rowlett"
-            src={Image}
+            src={Hero}
           />
         </div>
       </div>
@@ -105,16 +106,16 @@
     </div>
   </section>
   <section class="bg-white z-50 w-full flex flex-col items-center pt-36">
-    <div class="w-full z-[2]">
+    <div class="w-full z-[2] pointer-events-none">
       <Zoomer />
     </div>
-    <div class="bg-white h-[250vh] w-full z-[-1]" />
+    <div class="bg-white h-[230vh] w-full z-[-1]" />
     <section id="_work" class="w-full z-[1]">
       <Tracks />
     </section>
     <section
       id="_about"
-      class="bg-gray-200 w-full h-[300vh] flex justify-center items-center bg-cover brightness-50 bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
+      class="bg-gray-200 w-full h-[300vh] flex justify-center items-center bg-cover brightness-0 bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
     />
   </section>
 </div>

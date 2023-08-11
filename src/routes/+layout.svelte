@@ -3,6 +3,7 @@
   import { onMount } from 'svelte'
   import { scrollData } from './store.js'
   import Lenis from '@studio-freight/lenis'
+  import Cursor from '$lib/components/Cursor.svelte'
 
   const lenis = new Lenis()
 
@@ -28,6 +29,7 @@
 
 <div class="app">
   <main>
+    <Cursor />
     <slot />
   </main>
 </div>
