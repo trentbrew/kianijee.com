@@ -59,7 +59,7 @@
     </section>
     <div data-hover-icon="fullscreen">
       <section class="demo-gallery" data-hover-icon="fullscreen">
-        <a href="#work1">
+        <a href="/work1">
           <ul class="wrapper">
             {#each images[0] as image}
               <li data-hover-icon="fullscreen">
@@ -70,7 +70,7 @@
         </a>
       </section>
       <section class="demo-gallery" data-hover-icon="fullscreen">
-        <a href="#work2">
+        <a href="/work2">
           <ul class="wrapper">
             {#each images[1] as image}
               <li data-hover-icon="fullscreen">

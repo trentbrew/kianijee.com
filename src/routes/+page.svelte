@@ -122,7 +122,7 @@
       </div>
     </section>
     <section class="w-full h-full flex justify-center items-center p-12">
-      <div class="bg-black w-full aspect-video" />
+      <div class="bg-gray-300 w-full aspect-video" />
     </section>
   </section>
 </div>
