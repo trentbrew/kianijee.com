@@ -111,7 +111,7 @@
     </section>
     <section id="_about" class="w-full h-[300vh]">
       <div
-        id="profile-image"
+        id="profile"
         class="w-full h-full flex justify-center items-center bg-cover"
         style={`background-image: url(${Profile}); ${parallax}`}
       >
@@ -121,10 +121,17 @@
         <!-- content -->
       </div>
     </section>
+    <section class="w-full h-full flex justify-center items-center p-12">
+      <div class="bg-black w-full aspect-video" />
+    </section>
   </section>
 </div>
 
 <style>
+  #profile {
+    will-change: background-position;
+    font-family: 'Kameron', serif;
+  }
   .marquee__part {
     flex-shrink: 0;
     padding: 12px 0px;
