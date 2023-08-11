@@ -36,27 +36,38 @@
   onMount(() => {
     document.addEventListener('mouseover', e => {
       const target = e.target
-      // @ts-ignore
-      if (target.dataset.hoverHint) state.hint = target.dataset.hoverHint
-      else state.hint = null
-      // @ts-ignore
-      if (target.classList.contains('hoverable')) state.hover = true
-      else state.hover = false
+
+      if (target.dataset.hoverHint) {
+        state.hint = target.dataset.hoverHint
+      } else {
+        state.hint = null
+      }
+
+      if (target.classList.contains('hoverable')) {
+        state.hover = true
+      } else {
+        state.hover = false
+      }
     })
+
+    document.addEventListener('mousemove', moveCursor)
+
     document.addEventListener('mouseleave', e => {
       state.hideCursor = true
       state.hint = null
     })
+
     document.addEventListener('mouseenter', e => {
       state.hideCursor = false
     })
+
     document.addEventListener('mousedown', e => {
       state.mousedown = true
     })
+
     document.addEventListener('mouseup', e => {
       state.mousedown = false
     })
-    document.addEventListener('mousemove', moveCursor)
   })
 </script>
 
@@ -76,7 +87,9 @@
     style={state.cursorPoint}
   >
     {#if state.hint}
-      o hai
+      <span class="font-bold mix-blend-difference text-lg text-red opacity-0">
+        {state.hint}
+      </span>
     {/if}
   </div>
 </div>
@@ -84,6 +97,21 @@
 <style>
   .g-cursor {
     position: absolute;
+  }
+
+  span {
+    color: white;
+    mix-blend-mode: difference;
+    animation: text-delay 1s ease forwards;
+  }
+
+  @keyframes text-delay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   .g-cursor_hide {
@@ -109,7 +137,7 @@
     backdrop-filter: invert(1);
     will-change: transform;
     transition: margin 0.4s ease, opacity 0.4s ease, width 0.4s ease,
-      height 0.4s ease;
+      height 0.4s ease, transform 0s;
   }
 
   .g-cursor_click .g-cursor__point {
@@ -117,7 +145,8 @@
     height: 24px;
     margin-left: -12px;
     margin-top: -12px;
-    transition: 0.2s;
+    transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
+      opacity 0.4s ease, transform 0.2s;
   }
 
   .g-cursor_hover .g-cursor__point {
@@ -134,7 +163,8 @@
     height: 64px;
     margin-left: -32px;
     margin-top: -32px;
-    transition: 0.2s;
+    transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
+      opacity 0.4s ease, transform 0.2s;
   }
 
   .g-cursor_hint .g-cursor__point {
@@ -143,6 +173,7 @@
     margin-left: -150px;
     margin-top: -150px;
     backdrop-filter: invert(1);
+    transition-delay: 1s;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
   }
@@ -152,6 +183,7 @@
     height: 280px;
     margin-left: -140px;
     margin-top: -140px;
-    transition: 0.2s;
+    transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
+      opacity 0.4s ease, transform 0.2s;
   }
 </style>

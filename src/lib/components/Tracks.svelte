@@ -63,38 +63,30 @@
         <span class="flex w-[100vw] justify-end py-12">WORK</span>
       </div>
     </section>
-    <section class="demo-gallery" data-hint={hints[0]}>
-      <a href="#" class="">
-        <ul class="wrapper">
-          {#each images[0] as image}
-            <li class="" data-hover-hint={hints[0]}>
-              <img
-                src={image}
-                class=""
-                data-hover-hint={hints[0]}
-                alt="work1"
-              />
-            </li>
-          {/each}
-        </ul>
-      </a>
-    </section>
-    <section class="demo-gallery" data-hover-hint={hints[1]}>
-      <a href="#" class="">
-        <ul class="wrapper">
-          {#each images[1] as image}
-            <li class="" data-hover-hint={hints[1]}>
-              <img
-                src={image}
-                class=""
-                data-hover-hint={hints[1]}
-                alt="work2"
-              />
-            </li>
-          {/each}
-        </ul>
-      </a>
-    </section>
+    <div data-hover-hint={hints[0]}>
+      <section class="demo-gallery" data-hint={hints[0]}>
+        <a href="#">
+          <ul class="wrapper">
+            {#each images[0] as image}
+              <li data-hover-hint={hints[0]}>
+                <img src={image} data-hover-hint={hints[0]} alt="work1" />
+              </li>
+            {/each}
+          </ul>
+        </a>
+      </section>
+      <section class="demo-gallery" data-hover-hint={hints[1]}>
+        <a href="#">
+          <ul class="wrapper">
+            {#each images[1] as image}
+              <li data-hover-hint={hints[1]}>
+                <img src={image} data-hover-hint={hints[1]} alt="work2" />
+              </li>
+            {/each}
+          </ul>
+        </a>
+      </section>
+    </div>
   </div>
 </div>
 
@@ -165,6 +157,5 @@
     font-family: 'League Gothic', sans-serif;
     font-size: 8rem;
     line-height: 1;
-    /* font-weight: 900; */
   }
 </style>
