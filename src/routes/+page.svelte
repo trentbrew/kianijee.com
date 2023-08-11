@@ -1,25 +1,24 @@
 <script>
   import { onMount } from 'svelte'
+  import { scroll } from './store.js'
   import gsap from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
-  import { scrollData } from './store.js'
 
   import Menu from '$lib/components/Menu.svelte'
   import Hero from '$lib/images/landing.gif'
+  import Profile from '$lib/images/profile.png'
   import Wordmark from '$lib/components/Wordmark.svelte'
   import Zoomer from '$lib/components/Zoomer.svelte'
   import Tracks from '$lib/components/Tracks.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
-  let scroll
+  let parallax
 
-  scrollData.subscribe(value => {
-    scroll = value
-    ScrollTrigger.update()
-  })
+  $: parallax = `background-position: 0px ${$scroll.value * 0.5}px;`
 
   onMount(() => {
+    console.log('profile image: ', Profile)
     gsap.set('.marquee__inner', { xPercent: -50 }),
       gsap
         .to('.marquee__part', {
@@ -113,10 +112,15 @@
     <section id="_work" class="w-full z-[1]">
       <Tracks />
     </section>
-    <section
-      id="_about"
-      class="bg-gray-200 w-full h-[300vh] flex justify-center items-center bg-cover brightness-0 bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
-    />
+    <section id="_about" class="w-full">
+      <div
+        id="profile-image"
+        class="bg-gray-200 w-full h-[300vh] flex justify-center items-center bg-cover"
+        style={`background-image: url(${Profile}); ${parallax}`}
+      >
+        some content
+      </div>
+    </section>
   </section>
 </div>
 

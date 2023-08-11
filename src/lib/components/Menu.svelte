@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte'
   import gsap from 'gsap'
-  import { scrollData } from '../../routes/store.js'
+  import { scroll } from '../../routes/store.js'
   import Icon from '$lib/components/Icon.svelte'
 
   const items = [
@@ -13,12 +13,9 @@
   ]
 
   let open = false
-  let scroll = 0
-
-  $: scroll = $scrollData.scroll
 
   $: {
-    if (scroll > 0) {
+    if ($scroll.value > 0) {
       gsap.to('#menu-toggle', {
         css: {
           scale: 1,

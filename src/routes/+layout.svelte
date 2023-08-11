@@ -1,16 +1,18 @@
 <script>
   import './styles.css'
   import { onMount } from 'svelte'
-  import { scrollData } from './store.js'
+  import { scroll } from './store.js'
   import Lenis from '@studio-freight/lenis'
   import Cursor from '$lib/components/Cursor.svelte'
 
   const lenis = new Lenis()
+  const scrollData = scroll
 
   onMount(() => {
+    console.log('mounted layout')
     lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
       scrollData.update(state => ({
-        scroll,
+        value: scroll,
         limit,
         velocity,
         direction,
@@ -28,8 +30,8 @@
 </script>
 
 <div class="app">
+  <Cursor />
   <main>
-    <Cursor />
     <slot />
   </main>
 </div>
