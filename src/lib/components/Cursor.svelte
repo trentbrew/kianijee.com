@@ -41,8 +41,11 @@
 
       if (target.dataset.hoverHint) {
         state.hint = target.dataset.hoverHint
+      } else if (target.dataset.hoverIcon) {
+        state.icon = target.dataset.hoverIcon
       } else {
         state.hint = null
+        state.icon = null
       }
 
       if (target.classList.contains('hoverable')) {
@@ -57,6 +60,7 @@
     document.addEventListener('mouseleave', e => {
       state.hideCursor = true
       state.hint = null
+      state.icon = null
     })
 
     document.addEventListener('mouseenter', e => {
@@ -77,7 +81,7 @@
   class={`g-cursor ${
     state.hover
       ? `g-cursor_hover ${state.mousedown ? 'g-cursor_click_hover' : ''}`
-      : state.hint
+      : state.hint || state.icon
       ? `g-cursor_hint ${state.mousedown ? 'g-cursor_click_hint' : ''}`
       : state.hideCursor
       ? `g-cursor_hide`
@@ -92,7 +96,7 @@
       <span>{state.hint}</span>
     {/if}
     {#if state.icon}
-      <span><Icon name={state.icon} /></span>
+      <span><Icon size={64} name={state.icon} color="white" /></span>
     {/if}
   </div>
 </div>
@@ -108,15 +112,17 @@
     opacity: 0;
     color: white;
     mix-blend-mode: difference;
-    animation: text-delay 1s ease forwards;
+    animation: text-delay 400ms ease forwards 500ms;
   }
 
   @keyframes text-delay {
     from {
       opacity: 0;
+      transform: scale(0.5);
     }
     to {
       opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -174,20 +180,20 @@
   }
 
   .g-cursor_hint .g-cursor__point {
-    width: 200px;
-    height: 200px;
-    margin-left: -100px;
-    margin-top: -100px;
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+    margin-top: -75px;
     transition-delay: 1s;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
   }
 
   .g-cursor_click_hint .g-cursor__point {
-    width: 180px;
-    height: 180px;
-    margin-left: -90px;
-    margin-top: -90px;
+    width: 130px;
+    height: 130px;
+    margin-left: -65px;
+    margin-top: -65px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
   }

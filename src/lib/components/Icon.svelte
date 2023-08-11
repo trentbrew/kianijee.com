@@ -17,7 +17,7 @@
   }
 </script>
 
-<div style={`width: ${size}px; color: ${color}`}>
+<div style={`pointer-events: none; width: ${size}px; color: ${color}`}>
   {#if svg}{@html svg}{/if}
 </div>
 
