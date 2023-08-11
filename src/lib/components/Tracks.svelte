@@ -25,6 +25,8 @@
     ],
   ]
 
+  const hints = ['VIEW PERSONAL WORK', 'VIEW CLIENT WORK']
+
   onMount(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -61,23 +63,33 @@
         <span class="flex w-[100vw] justify-end py-12">WORK</span>
       </div>
     </section>
-    <section class="demo-gallery hoverable">
-      <a href="#" class="hoverable">
-        <ul class="wrapper hoverable">
+    <section class="demo-gallery" data-hint={hints[0]}>
+      <a href="#" class="">
+        <ul class="wrapper">
           {#each images[0] as image}
-            <li class="hoverable">
-              <img src={image} class="hoverable" />
+            <li class="" data-hover-hint={hints[0]}>
+              <img
+                src={image}
+                class=""
+                data-hover-hint={hints[0]}
+                alt="work1"
+              />
             </li>
           {/each}
         </ul>
       </a>
     </section>
-    <section class="demo-gallery hoverable">
-      <a href="#" class="hoverable">
-        <ul class="wrapper hoverable">
+    <section class="demo-gallery" data-hover-hint={hints[1]}>
+      <a href="#" class="">
+        <ul class="wrapper">
           {#each images[1] as image}
-            <li class="hoverable">
-              <img src={image} class="hoverable" />
+            <li class="" data-hover-hint={hints[1]}>
+              <img
+                src={image}
+                class=""
+                data-hover-hint={hints[1]}
+                alt="work2"
+              />
             </li>
           {/each}
         </ul>

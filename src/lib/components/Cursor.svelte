@@ -8,6 +8,8 @@
     yParent: 0,
     hover: false,
     hideCursor: true,
+    hint: null,
+    mousedown: false,
   }
 
   function cursorCircle() {
@@ -33,27 +35,50 @@
 
   onMount(() => {
     document.addEventListener('mouseover', e => {
+      const target = e.target
       // @ts-ignore
-      if (e.target.classList.contains('hoverable')) state.hover = true
+      if (target.dataset.hoverHint) state.hint = target.dataset.hoverHint
+      else state.hint = null
+      // @ts-ignore
+      if (target.classList.contains('hoverable')) state.hover = true
       else state.hover = false
     })
-    document.addEventListener('mousemove', moveCursor)
     document.addEventListener('mouseleave', e => {
       state.hideCursor = true
+      state.hint = null
     })
     document.addEventListener('mouseenter', e => {
       state.hideCursor = false
     })
+    document.addEventListener('mousedown', e => {
+      state.mousedown = true
+    })
+    document.addEventListener('mouseup', e => {
+      state.mousedown = false
+    })
+    document.addEventListener('mousemove', moveCursor)
   })
 </script>
 
 <div
   class={`g-cursor ${
-    state.hover ? 'g-cursor_hover' : state.hideCursor ? 'g-cursor_hide' : ''
+    state.hover
+      ? `g-cursor_hover ${state.mousedown ? 'g-cursor_click_hover' : ''}`
+      : state.hint
+      ? `g-cursor_hint ${state.mousedown ? 'g-cursor_click_hint' : ''}`
+      : state.hideCursor
+      ? `g-cursor_hide`
+      : `${state.mousedown ? 'g-cursor_click' : ''}`
   }`}
 >
-  <!-- <div style={state.cursorCircle} class="g-cursor__circle" /> -->
-  <div class="g-cursor__point" style={state.cursorPoint} />
+  <div
+    class="g-cursor__point flex justify-center items-center"
+    style={state.cursorPoint}
+  >
+    {#if state.hint}
+      o hai
+    {/if}
+  </div>
 </div>
 
 <style>
@@ -68,31 +93,14 @@
     transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
   }
 
-  .g-cursor__circle {
-    pointer-events: none;
-    user-select: none;
-    top: 2px;
-    left: 2px;
-    position: fixed;
-    width: 48px;
-    height: 48px;
-    background: black;
-    mix-blend-mode: difference;
-    border-radius: 100%;
-    z-index: 5555;
-    backface-visibility: hidden;
-    transition: margin 0.6s ease, opacity 0.6s ease, width 0.6s ease,
-      height 0.6s ease;
-  }
-
   .g-cursor__point {
     top: 0;
     left: 0;
     position: fixed;
-    width: 24px;
-    height: 24px;
-    margin-left: -8px;
-    margin-top: -8px;
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
     pointer-events: none;
     user-select: none;
     border-radius: 100%;
@@ -104,26 +112,46 @@
       height 0.4s ease;
   }
 
+  .g-cursor_click .g-cursor__point {
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    transition: 0.2s;
+  }
+
   .g-cursor_hover .g-cursor__point {
     width: 80px;
     height: 80px;
     margin-left: -40px;
     margin-top: -40px;
-    background: black;
-    mix-blend-mode: difference;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
   }
 
-  .g-cursor_hover .g-cursor__circle {
-    opacity: 1;
-    width: 74px;
-    height: 74px;
-    margin-left: -22px;
-    margin-top: -22px;
-    background: rgba(255, 255, 255, 1);
-    border-color: transparent;
+  .g-cursor_click_hover .g-cursor__point {
+    width: 64px;
+    height: 64px;
+    margin-left: -32px;
+    margin-top: -32px;
+    transition: 0.2s;
+  }
+
+  .g-cursor_hint .g-cursor__point {
+    width: 300px;
+    height: 300px;
+    margin-left: -150px;
+    margin-top: -150px;
+    backdrop-filter: invert(1);
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
-      opacity 0.4s ease;
+      opacity 0.4s ease, transform 0s;
+  }
+
+  .g-cursor_click_hint .g-cursor__point {
+    width: 280px;
+    height: 280px;
+    margin-left: -140px;
+    margin-top: -140px;
+    transition: 0.2s;
   }
 </style>
