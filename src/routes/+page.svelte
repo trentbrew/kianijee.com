@@ -118,7 +118,7 @@
         <div class="absolute w-full h-[300vh]">
           <div class="noisy" />
         </div>
-        some content
+        <!-- content -->
       </div>
     </section>
   </section>
