@@ -5,6 +5,26 @@
 
   gsap.registerPlugin(ScrollTrigger)
 
+  const images = [
+    [
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_6_lrKGt0qBH5.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_7_m5NDjDSFy5.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_1_ZKuFwXr1AL.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_2_4NZdIGJ1fw.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/1_5_eASPanmpLW.png?token=',
+    ],
+    [
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_1_jEoWPrjyA6.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_2_PA4qF3XeQL.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_3_a8r9ooG8Ky.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_4_vk7gpSo73R.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_5_ypK9TBM2jx.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_6_mZn1IrcDSs.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_7_Ob4S78DKhL.png?token=',
+      'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/krxqpgwegx276x7/2_8_ZrRdbEGW0I.png?token=',
+    ],
+  ]
+
   onMount(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -18,7 +38,7 @@
     gsap.utils.toArray('.demo-wrapper section').forEach((section, index) => {
       const w = section.querySelector('.wrapper')
       const [x, xEnd] =
-        index % 2 ? ['10%', w.scrollWidth * -1] : [w.scrollWidth * -1, 0]
+        index % 2 ? ['100%', w.scrollWidth * -1] : [w.scrollWidth * -1, 0]
 
       tl.fromTo(
         w,
@@ -43,106 +63,20 @@
     </section>
     <section class="demo-gallery">
       <ul class="wrapper">
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
+        {#each images[0] as image}
+          <li>
+            <img src={image} alt="" />
+          </li>
+        {/each}
       </ul>
     </section>
     <section class="demo-gallery">
       <ul class="wrapper">
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
-        <li>
-          <img
-            src="https://source.unsplash.com/random/1240x874?sig=67"
-            alt=""
-          />
-        </li>
+        {#each images[1] as image}
+          <li>
+            <img src={image} alt="" />
+          </li>
+        {/each}
       </ul>
     </section>
   </div>
@@ -151,7 +85,7 @@
 <style>
   img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16/9;
     background: #f0f0f0;
   }
 

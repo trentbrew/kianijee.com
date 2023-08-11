@@ -114,7 +114,7 @@
     </section>
     <section
       id="_about"
-      class="bg-gray-200 w-full h-screen flex justify-center items-center bg-fixed bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
+      class="bg-gray-200 w-full h-[300vh] flex justify-center items-center bg-cover brightness-50 bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/lz9fva7sbzeyyav/profile_small_mkrxTP7QDs.png?token=)]"
     />
   </section>
 </div>
