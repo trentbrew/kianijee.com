@@ -7,9 +7,10 @@
     xParent: 0,
     yParent: 0,
     hover: false,
+    mousedown: false,
     hideCursor: true,
     hint: null,
-    mousedown: false,
+    icon: null,
   }
 
   function cursorCircle() {
@@ -86,9 +87,9 @@
     class="g-cursor__point flex justify-center items-center"
     style={state.cursorPoint}
   >
-    {#if state.hint}
-      <span class="font-bold mix-blend-difference text-lg text-red opacity-0">
-        {state.hint}
+    {#if state.hint || state.icon}
+      <span>
+        {state.hint ?? state.icon}
       </span>
     {/if}
   </div>
@@ -100,6 +101,9 @@
   }
 
   span {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 3rem;
+    opacity: 0;
     color: white;
     mix-blend-mode: difference;
     animation: text-delay 1s ease forwards;
@@ -168,20 +172,20 @@
   }
 
   .g-cursor_hint .g-cursor__point {
-    width: 300px;
-    height: 300px;
-    margin-left: -150px;
-    margin-top: -150px;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -100px;
     transition-delay: 1s;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
   }
 
   .g-cursor_click_hint .g-cursor__point {
-    width: 280px;
-    height: 280px;
-    margin-left: -140px;
-    margin-top: -140px;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0.1s;
   }

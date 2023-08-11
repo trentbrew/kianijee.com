@@ -25,7 +25,7 @@
     ],
   ]
 
-  const hints = ['VIEW PERSONAL WORK', 'VIEW CLIENT WORK']
+  const hints = ['VIEW', 'VIEW']
 
   onMount(() => {
     const tl = gsap.timeline({
@@ -92,12 +92,11 @@
 
 <style>
   .demo-gallery {
-    /* filter: grayscale(1);/ */
     cursor: pointer;
     transition: 300ms;
   }
   .demo-gallery:hover {
-    /* filter: grayscale(0); */
+    filter: brightness(0.9);
     transform: scale(0.95);
   }
   img {
