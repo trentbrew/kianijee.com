@@ -43,7 +43,7 @@
     gsap.to('#menu-backdrop', {
       duration: 0.6,
       css: {
-        scale: 75,
+        scale: 80,
       },
     })
     setTimeout(() => {
