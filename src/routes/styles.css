@@ -45,7 +45,7 @@ html.lenis {
   width: 400%;
   height: 400vh;
   background: transparent url("https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/4cp1685jgd9acd6/noise_GUMlqIzVZ2.png?token=") repeat 0 0;
-  background-size: 18%;
+  background-size: 15%;
   background-repeat: repeat;
   animation: 1200ms infinite noise ease;
   pointer-events: none;
