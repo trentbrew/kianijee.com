@@ -147,6 +147,7 @@
     background: white;
     z-index: 55555555;
     mix-blend-mode: difference;
+    backdrop-filter: contrast(2);
     will-change: transform;
     transition: margin 0.4s ease, opacity 0.4s ease, width 0.4s ease,
       height 0.4s ease, transform 0s;

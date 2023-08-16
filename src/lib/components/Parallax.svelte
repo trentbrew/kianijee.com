@@ -1,88 +1,41 @@
 <script>
-  import gsap from 'gsap'
-  import ScrollTrigger from 'gsap/ScrollTrigger'
+  import { onMount } from 'svelte'
+  import { scroll } from '../../routes/store.js'
+  import Back from '$lib/components/Back.svelte'
 
-  gsap.registerPlugin(ScrollTrigger)
+  export let images
 
-  gsap.utils.toArray('.image-container').forEach(function (container) {
-    let image = container.querySelector('img')
+  let parallax
+  let mounted
 
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        scrub: true,
-        pin: false,
-      },
-    })
-    tl.from(image, {
-      yPercent: -30,
-      ease: 'none',
-    }).to(image, {
-      yPercent: 30,
-      ease: 'none',
-    })
+  onMount(() => {
+    mounted = true
   })
+
+  $: parallax = index => {
+    if (mounted) {
+      const image = document.getElementById(`image-${index}`)
+      const clientHeight = document.documentElement.clientHeight
+      const getHeight = () =>
+        image.height > clientHeight ? image.height : clientHeight
+      const getOffset = () => ($scroll.value - image.height) * index * 0.5
+      console.log(index, image.height, clientHeight)
+      return `height: ${getHeight()}px; object-position: 0px ${getOffset()}px;`
+    }
+  }
 </script>
 
-<div class="grid-container">
-  <div class="grid-x align-center">
-    <div class="cell large-2">
-      <p>Some text</p>
-      <div class="image-container image-one">
-        <img src="https://picsum.photos/400/400" />
-      </div>
-    </div>
-    <div class="cell large-11">
-      <div class="image-container image-two">
-        <img src="https://picsum.photos/1920/1080" />
-      </div>
-    </div>
-    <div class="cell large-4">
-      <div class="image-container image-three">
-        <img src="https://picsum.photos/1080/1920" />
-      </div>
-    </div>
-  </div>
+<div>
+  <Back href="/#_work" />
+  {#each images as src, i}
+    {#if src}
+      <img
+        {src}
+        id={`image-${i}`}
+        class="object-cover w-screen h-full"
+        style={parallax(i)}
+        alt="work"
+      />
+    {/if}
+  {/each}
 </div>
-
-<style>
-  .grid-container {
-    padding: 50vh 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .image-container {
-    position: relative;
-    overflow: hidden;
-    background-color: red;
-    padding-bottom: calc(100% / (var(--ratio)));
-  }
-
-  .cell + .cell {
-    margin-top: 20vh;
-  }
-
-  .image-one {
-    --ratio: 400/400;
-  }
-
-  .image-two {
-    --ratio: 1920/1080;
-  }
-
-  .image-three {
-    --ratio: 1080/1920;
-  }
-
-  .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-</style>

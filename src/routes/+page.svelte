@@ -101,7 +101,8 @@
       </div>
     </div>
   </section>
-  <section class="bg-white z-50 w-full flex flex-col items-center pt-36">
+  <section id="_work" class="bg-white w-full h-[300vh]" />
+  <!-- <section class="bg-white z-50 w-full flex flex-col items-center pt-36">
     <div class="w-full z-[2] pointer-events-none">
       <Zoomer />
     </div>
@@ -118,13 +119,13 @@
         <div class="absolute w-full h-[300vh]">
           <div class="noisy" />
         </div>
-        <!-- content -->
+        <div class="content"></div>
       </div>
     </section>
     <section class="w-full h-full flex justify-center items-center p-12">
       <div class="bg-gray-300 w-full aspect-video" />
     </section>
-  </section>
+  </section> -->
 </div>
 
 <style>

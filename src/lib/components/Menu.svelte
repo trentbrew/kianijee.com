@@ -41,7 +41,7 @@
     gsap.to('#menu-backdrop', {
       duration: 0.6,
       css: {
-        scale: 80,
+        scale: 30,
       },
     })
     setTimeout(() => {
@@ -60,7 +60,7 @@
     items.forEach((item, i) => animateItem(i, false))
     setTimeout(() => {
       open = false
-    }, 800)
+    }, 200)
   }
 
   function toggleMenu() {
@@ -129,16 +129,16 @@
 <div
   id="menu-backdrop"
   class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300 {open
-    ? 'bg-white/80 backdrop-invert'
+    ? 'bg-white backdrop-invert'
     : ''}"
   style="transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);"
 />
 {#if open}
   <div
     id="menu-items"
-    class="fixed w-screen h-screen top-0 left flex justify-end items-end pr-8 pb-8 z-[100] text-right"
+    class="fixed w-screen h-screen top-0 left flex justify-end items-start pr-8 pb-8 z-[100] text-right"
   >
-    <ul>
+    <ul class="mt-[160px]">
       {#each items as item, i}
         <li class="ease-in-out">
           <a
@@ -157,8 +157,9 @@
 <style>
   a {
     font-family: 'League Gothic', sans-serif;
-    font-size: 6rem;
+    font-size: 4.5rem;
     line-height: 1.2;
     font-weight: 400;
+    margin-right: 32px;
   }
 </style>
