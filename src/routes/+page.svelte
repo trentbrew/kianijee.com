@@ -143,7 +143,7 @@
     background: white;
     color: black;
     text-transform: uppercase;
-    font-size: 4.667vw;
+    font-size: 3vw;
     position: relative;
     overflow: hidden;
   }
