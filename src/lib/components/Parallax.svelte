@@ -14,12 +14,11 @@
 
   $: parallax = index => {
     if (mounted) {
-      const image = document.getElementById(`image-${index}`)
-      const clientHeight = document.documentElement.clientHeight
-      const getHeight = () =>
-        image.height > clientHeight ? image.height : clientHeight
-      const getOffset = () => ($scroll.value - image.height) * index * 0.5
-      console.log(index, image.height, clientHeight)
+      if (index === 0) console.clear()
+      const img = document.getElementById(`image-${index}`)
+      const client = document.documentElement.clientHeight
+      const getHeight = () => (img.height > client ? img.height : client)
+      const getOffset = () => ($scroll.value - img.offsetTop) / 2
       return `height: ${getHeight()}px; object-position: 0px ${getOffset()}px;`
     }
   }
