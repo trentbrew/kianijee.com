@@ -55,7 +55,7 @@
 
 <style>
   svg {
-    transform: scale(1.6);
+    transform: scale(1.5);
     animation: fill 4s cubic-bezier(0.83, 0, 0.17, 1) forwards 15s;
   }
 
@@ -127,13 +127,7 @@
   }
 
   @keyframes line-animate {
-    from {
-      /* opacity: 0.7; */
-      /* transform: translateY(64px); */
-    }
     to {
-      /* transform: translateY(0px); */
-      /* opacity: 1; */
       stroke-dashoffset: 0;
     }
   }
@@ -141,7 +135,7 @@
   @keyframes fill {
     from {
       fill: transparent;
-      transform: scale(1.6);
+      transform: scale(1.5);
     }
     to {
       fill: #ffffff;

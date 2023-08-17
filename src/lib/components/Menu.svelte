@@ -15,11 +15,33 @@
   let open = false
 
   $: {
-    if ($scroll.value > 0) {
+    if (window.location.pathname === '/') {
+      if ($scroll.value > 0) {
+        gsap.to('#menu-toggle', {
+          duration: 0.4,
+          css: {
+            scale: 1,
+            opacity: 1,
+            background: '#dddddd',
+          },
+        })
+      } else {
+        gsap.to('#menu-toggle', {
+          duration: 0.4,
+          css: {
+            scale: 1,
+            opacity: 1,
+            background: '#dddddd00',
+          },
+        })
+      }
+    } else {
       gsap.to('#menu-toggle', {
+        duration: 0.4,
         css: {
           scale: 1,
           opacity: 1,
+          background: '#000000',
         },
       })
     }
@@ -31,9 +53,10 @@
         css: {
           scale: 1,
           opacity: 1,
+          background: '#00000000',
         },
       })
-    }, 18000)
+    }, 12000)
   })
 
   function openMenu() {
@@ -124,7 +147,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   id="menu-toggle"
-  class="hoverable bg-white mix-blend-difference backdrop-blur-[32px] backdrop-contrast-[4] fixed rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300 opacity-0 flex justify-center items-center"
+  class="hoverable bg-black fixed rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] opacity-0 flex justify-center items-center"
   on:click={toggleMenu}
   on:keydown={handleKeydown}
 >
@@ -141,7 +164,7 @@
   class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300"
 />
 <div
-  class="fixed top-0 left-0 w-full h-screen backdrop-blur-[64px] backdrop-brightness-[0.4] duration-[600ms] z-[100] {open
+  class="fixed top-0 left-0 w-full h-screen backdrop-blur-[64px] backdrop-brightness-[0.4] duration-[400ms] z-[100] {open
     ? 'opacity-1'
     : 'opacity-0 pointer-events-none'}"
 />

@@ -34,7 +34,7 @@
     })
     tl.to('#hero', {
       yPercent: 10,
-      scale: 0.2,
+      scale: 0.5,
       ease: 'none',
     })
     tl.to('#backdrop', {
