@@ -19,7 +19,7 @@
       const client = document.documentElement.clientHeight
       const getHeight = () => (img.height > client ? img.height : client)
       const getOffset = () => ($scroll.value - img.offsetTop) / 2
-      return `height: ${getHeight()}px; object-position: 0px ${getOffset()}px;`
+      return `height: ${getHeight()}px; object-position: 50% ${getOffset()}px;`
     }
   }
 </script>

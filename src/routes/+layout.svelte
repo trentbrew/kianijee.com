@@ -4,6 +4,7 @@
   import { scroll } from './store.js'
   import Lenis from '@studio-freight/lenis'
   import Cursor from '$lib/components/Cursor.svelte'
+  import Menu from '$lib/components/Menu.svelte'
 
   const lenis = new Lenis()
   const scrollData = scroll
@@ -30,6 +31,7 @@
 
 <div class="app">
   <Cursor />
+  <Menu />
   <main>
     <slot />
   </main>

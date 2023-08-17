@@ -124,7 +124,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   id="menu-toggle"
-  class="hoverable bg-white fixed rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300 opacity-0 flex justify-center items-center"
+  class="hoverable bg-white mix-blend-difference backdrop-blur-[32px] backdrop-contrast-[4] fixed rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300 opacity-0 flex justify-center items-center"
   on:click={toggleMenu}
   on:keydown={handleKeydown}
 >
@@ -139,11 +139,8 @@
 <div
   id="menu-backdrop"
   class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300"
-  style="transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);"
 />
 <div
-  id="menu-backdrop-blur"
-  on:click={closeMenu}
   class="fixed top-0 left-0 w-full h-screen backdrop-blur-[64px] backdrop-brightness-[0.4] duration-[600ms] z-[100] {open
     ? 'opacity-1'
     : 'opacity-0 pointer-events-none'}"

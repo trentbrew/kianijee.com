@@ -3,13 +3,8 @@
   import { scroll } from './store.js'
   import gsap from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
-
-  import Menu from '$lib/components/Menu.svelte'
   import Hero from '$lib/images/landing.gif'
-  import Profile from '$lib/images/profile.png'
   import Wordmark from '$lib/components/Wordmark.svelte'
-  import Zoomer from '$lib/components/Zoomer.svelte'
-  import Tracks from '$lib/components/Tracks.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -55,7 +50,6 @@
 </svelte:head>
 
 <div>
-  <Menu />
   <section id="_home" class="flex w-full h-screen justify-center items-center">
     <section id="hero" class="absolute z-50">
       <Wordmark />
