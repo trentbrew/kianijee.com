@@ -93,10 +93,10 @@
     style={state.cursorPoint}
   >
     {#if state.hint}
-      <span>{state.hint}</span>
+      <span class="uppercase" id="inner">{state.hint}</span>
     {/if}
     {#if state.icon}
-      <span><Icon size={64} name={state.icon} color="white" /></span>
+      <span id="inner"><Icon size={64} name={state.icon} color="white" /></span>
     {/if}
   </div>
 </div>
@@ -108,17 +108,17 @@
 
   span {
     font-family: 'League Gothic', sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     opacity: 0;
     color: white;
     mix-blend-mode: difference;
-    animation: text-delay 400ms ease forwards 500ms;
+    animation: text-delay 400ms ease forwards 200ms;
   }
 
   @keyframes text-delay {
     from {
       opacity: 0;
-      transform: scale(0.5);
+      transform: scale(0.95);
     }
     to {
       opacity: 1;
@@ -147,7 +147,7 @@
     background: white;
     z-index: 55555555;
     mix-blend-mode: difference;
-    backdrop-filter: contrast(3);
+    backdrop-filter: contrast(4);
     will-change: transform;
     transition: margin 0.4s ease, opacity 0.4s ease, width 0.4s ease,
       height 0.4s ease, transform 0s;
@@ -181,20 +181,22 @@
   }
 
   .g-cursor_hint .g-cursor__point {
-    width: 150px;
-    height: 150px;
-    margin-left: -75px;
-    margin-top: -75px;
+    backdrop-filter: contrast(1.3);
+    width: 300px;
+    height: 300px;
+    margin-left: -150px;
+    margin-top: -150px;
     transition-delay: 1s;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
   }
 
   .g-cursor_click_hint .g-cursor__point {
-    width: 130px;
-    height: 130px;
-    margin-left: -65px;
-    margin-top: -65px;
+    backdrop-filter: contrast(1.3);
+    width: 280px;
+    height: 280px;
+    margin-left: -140px;
+    margin-top: -140px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
   }

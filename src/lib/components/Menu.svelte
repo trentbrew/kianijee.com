@@ -13,31 +13,57 @@
   ]
 
   let open = false
+  let mounted = false
 
   $: {
-    if (window.location.pathname === '/') {
-      if ($scroll.value > 0) {
-        gsap.to('#menu-toggle', {
-          duration: 0.4,
-          css: {
-            scale: 1,
-            opacity: 1,
-            background: '#dddddd',
-          },
-        })
+    if (mounted) {
+      if (window.location.pathname === '/') {
+        if ($scroll.value > 0) {
+          gsap.to('#menu-toggle', {
+            duration: 0.4,
+            css: {
+              scale: 1,
+              opacity: 1,
+              background: '#dddddd',
+            },
+          })
+        } else {
+          gsap.to('#menu-toggle', {
+            duration: 0.4,
+            css: {
+              scale: 1,
+              opacity: 1,
+              background: '#dddddd00',
+            },
+          })
+        }
       } else {
         gsap.to('#menu-toggle', {
-          duration: 0.4,
+          duration: 0,
           css: {
             scale: 1,
             opacity: 1,
-            background: '#dddddd00',
+            background: '#000000',
           },
         })
       }
+    }
+  }
+
+  onMount(() => {
+    mounted = true
+    if (window.location.pathname == '/') {
+      setTimeout(() => {
+        gsap.to('#menu-toggle', {
+          css: {
+            scale: 1,
+            opacity: 1,
+            background: '#00000000',
+          },
+        })
+      }, 12000)
     } else {
       gsap.to('#menu-toggle', {
-        duration: 0.4,
         css: {
           scale: 1,
           opacity: 1,
@@ -45,18 +71,6 @@
         },
       })
     }
-  }
-
-  onMount(() => {
-    setTimeout(() => {
-      gsap.to('#menu-toggle', {
-        css: {
-          scale: 1,
-          opacity: 1,
-          background: '#00000000',
-        },
-      })
-    }, 12000)
   })
 
   function openMenu() {
@@ -73,7 +87,6 @@
   }
 
   function closeMenu() {
-    console.log('closing menu')
     gsap.to('#menu-backdrop', {
       duration: 0.6,
       delay: 0.2,

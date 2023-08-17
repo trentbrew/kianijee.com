@@ -5,6 +5,7 @@
   import ScrollTrigger from 'gsap/ScrollTrigger'
   import Hero from '$lib/images/landing.gif'
   import Wordmark from '$lib/components/Wordmark.svelte'
+  import Footer from '$lib/components/Footer.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -51,7 +52,7 @@
 
 <div>
   <section id="_home" class="flex w-full h-screen justify-center items-center">
-    <section id="hero" class="absolute z-50">
+    <section id="hero" class="absolute z-50 pointer-events-none">
       <Wordmark />
     </section>
     <section id="backdrop" class="z-[-1] fixed">
@@ -95,7 +96,54 @@
       </div>
     </div>
   </section>
-  <section id="_work" class="bg-white w-full h-[300vh]" />
+  <div
+    class="bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/gradient_Mj25u03Pwm.png?token=)]"
+  >
+    <section id="_work" class=" w-full">
+      <div class="flex flex-col gap-6">
+        <div class="flex gap-6 w-full">
+          <a
+            href="/work1"
+            class="w-full mt-[-48px] duration-200 hover:brightness-75"
+          >
+            <div
+              data-hover-hint="personal"
+              class="w-full h-[1536px] rounded-br-[56px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_l_GkTBKcOzTj.png?token=)]"
+            />
+          </a>
+          <a href="/work2" class="w-full duration-200 hover:brightness-75">
+            <div
+              data-hover-hint="professional"
+              class="w-full h-[1488px] rounded-bl-[56px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_r_GUlhAbg068.png?token=)]"
+            />
+          </a>
+        </div>
+        <a href="#" class="w-full duration-200 hover:brightness-75">
+          <div
+            data-hover-hint="coming soon"
+            class="rounded-b-[56px] w-full h-[560px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_b_BAM0DHq49c.png?token=)]"
+          />
+        </a>
+      </div>
+    </section>
+    <section class="pt-10">
+      <div
+        class="aspect-video w-full rounded-[56px] bg-cover bg-center bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/thumb_FSWVC7yzWF.png?token=)]"
+      />
+    </section>
+    <section class="pt-10">
+      <div
+        data-hover-hint="shop soon"
+        class="w-full h-[60vh] rounded-[56px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/shop_preview_qXabGzs55y.png?token=)]"
+      />
+    </section>
+    <div class="mt-10 pb-10">
+      <Footer />
+    </div>
+  </div>
+
+  <!-- LEGACY -->
+
   <!-- <section class="bg-white z-50 w-full flex flex-col items-center pt-36">
     <div class="w-full z-[2] pointer-events-none">
       <Zoomer />
@@ -141,6 +189,7 @@
     font-size: 3vw;
     position: relative;
     overflow: hidden;
+    z-index: -1;
   }
 
   .marquee__inner {
