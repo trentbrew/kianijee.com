@@ -11,4 +11,9 @@
   ]
 </script>
 
+<svelte:head>
+  <title>Zakia Rowlett | Work</title>
+  <meta name="description" content="Personal Work" />
+</svelte:head>
+
 <Parallax {images} />

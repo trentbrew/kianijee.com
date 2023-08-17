@@ -11,7 +11,9 @@
 
   let parallax
 
-  $: parallax = `background-position: 0px ${$scroll.value * 0.5}px;`
+  $: parallax = (offsetTop = 0, speed = 0.5) => {
+    // return `background-position: 0px ${($scroll.value - offsetTop) * speed}px;`
+  }
 
   onMount(() => {
     gsap.set('.marquee__inner', { xPercent: -50 }),
@@ -46,8 +48,8 @@
 </script>
 
 <svelte:head>
-  <title>Zakia Rowlett</title>
-  <meta name="description" content="About this app" />
+  <title>Zakia Rowlett | Home</title>
+  <meta name="description" content="Zakia Rowlett" />
 </svelte:head>
 
 <div>
@@ -102,28 +104,28 @@
     <section id="_work" class=" w-full">
       <div class="flex flex-col gap-6">
         <div class="flex gap-6 w-full">
-          <a
-            href="/work1"
-            class="w-full mt-[-48px] duration-200 hover:brightness-75"
-          >
+          <a href="/work1" class="w-full duration-200 hover:brightness-100">
             <div
-              data-hover-hint="personal"
-              class="w-full h-[1536px] rounded-br-[56px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_l_GkTBKcOzTj.png?token=)]"
+              style={parallax(window.innerHeight + 200)}
+              data-hover-hint="view work"
+              class="w-full h-[calc(1488px+48px)] mt-[-48px] rounded-bl-[56px] bg-no-repeat bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_l_GkTBKcOzTj.png?token=)]"
             />
           </a>
-          <a href="/work2" class="w-full duration-200 hover:brightness-75">
+          <a href="/work2" class="w-full duration-200 hover:brightness-100">
             <div
-              data-hover-hint="professional"
-              class="w-full h-[1488px] rounded-bl-[56px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_r_GUlhAbg068.png?token=)]"
+              style={parallax(window.innerHeight + 200, 0.3)}
+              data-hover-hint="view work"
+              class="w-full h-[calc(1488px)] rounded-br-[56px] bg-no-repeat bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_r_GUlhAbg068.png?token=)]"
             />
           </a>
         </div>
-        <a href="#" class="w-full duration-200 hover:brightness-75">
+        <!-- <a href="#" class="w-full duration-200 hover:brightness-100">
           <div
+            style={parallax(window.innerHeight + 1688, 0.2)}
             data-hover-hint="coming soon"
-            class="rounded-b-[56px] w-full h-[560px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_b_BAM0DHq49c.png?token=)]"
+            class="rounded-b-[56px] w-full h-[500px] bg-no-repeat bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_b_BAM0DHq49c.png?token=)]"
           />
-        </a>
+        </a> -->
       </div>
     </section>
     <section class="pt-10">

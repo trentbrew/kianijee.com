@@ -98,6 +98,9 @@
     {#if state.icon}
       <span id="inner"><Icon size={64} name={state.icon} color="white" /></span>
     {/if}
+    {#if state.hover}
+      <!-- <div class="h-1 w-1 rounded-full backdrop-invert" /> -->
+    {/if}
   </div>
 </div>
 
@@ -108,7 +111,7 @@
 
   span {
     font-family: 'League Gothic', sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     opacity: 0;
     color: white;
     mix-blend-mode: difference;
