@@ -46,21 +46,22 @@
     })
     setTimeout(() => {
       items.forEach((item, i) => animateItem(i, true))
-    }, 200)
+    }, 100)
   }
 
   function closeMenu() {
+    console.log('closing menu')
     gsap.to('#menu-backdrop', {
       duration: 0.6,
       delay: 0.2,
       css: {
-        scale: 1.2,
+        scale: 1,
       },
     })
     items.forEach((item, i) => animateItem(i, false))
     setTimeout(() => {
       open = false
-    }, 200)
+    }, 100)
   }
 
   function toggleMenu() {
@@ -100,6 +101,19 @@
         },
       }
     )
+    gsap.fromTo(
+      `.menu-item-text-${index}`,
+      {
+        duration: 0.6,
+        delay: enter ? (index ? 0.12 * index : 0) : 0.15,
+        left: enter ? '5%' : '0%',
+      },
+      {
+        duration: 0.6,
+        delay: enter ? (index ? 0.12 * index : 0) : 0.15,
+        left: enter ? '0%' : '5%',
+      }
+    )
   }
 
   function handleKeydown(e) {
@@ -110,43 +124,48 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   id="menu-toggle"
-  class="bg-white/{open
-    ? '10'
-    : '80'} hoverable fixed backdrop-invert backdrop-blur-[12px] rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300 opacity-0 flex justify-center items-center"
+  class="hoverable bg-white fixed rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] duration-300 opacity-0 flex justify-center items-center"
   on:click={toggleMenu}
   on:keydown={handleKeydown}
 >
-  {#if open}
-    <div class={`pointer-events-none`}>
+  <div class="pointer-events-none mix-blend-difference">
+    {#if open}
       <Icon color="white" name="close" />
-    </div>
-  {:else}
-    <div class={`pointer-events-none`}>
-      <Icon color="black" name="menu" />
-    </div>
-  {/if}
+    {:else}
+      <Icon color="white" name="menu" />
+    {/if}
+  </div>
 </div>
 <div
   id="menu-backdrop"
-  class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300 {open
-    ? 'bg-white backdrop-invert'
-    : ''}"
+  class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300"
   style="transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);"
+/>
+<div
+  id="menu-backdrop-blur"
+  on:click={closeMenu}
+  class="fixed top-0 left-0 w-full h-screen backdrop-blur-[64px] backdrop-brightness-[0.4] duration-[600ms] z-[100] {open
+    ? 'opacity-1'
+    : 'opacity-0 pointer-events-none'}"
 />
 {#if open}
   <div
     id="menu-items"
-    class="fixed w-screen h-screen top-0 left flex justify-end items-start pr-8 pb-8 z-[100] text-right"
+    class="fixed w-screen h-screen top-0 left flex justify-end items-center pr-8 pb-8 z-[100] text-right"
   >
-    <ul class="mt-[160px]">
+    <ul>
       {#each items as item, i}
         <li class="ease-in-out">
           <a
             href={item.link}
-            class="hoverable menu-item {`menu-item-${i}`} text-2xl font-bold text-black hover:underline cursor-pointer opacity-0"
+            class="menu-item {`menu-item-${i}`} text-2xl font-bold text-white duration-300 cursor-pointer opacity-0"
             on:click={handleAnchorClick}
           >
-            {item.name}
+            <span class="absolute w-full left-0 pr-64 {`menu-item-text-${i}`}">
+              <span class="hoverable hover:opacity-50">
+                {item.name}
+              </span>
+            </span>
           </a>
         </li>
       {/each}
@@ -156,10 +175,10 @@
 
 <style>
   a {
-    font-family: 'League Gothic', sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-size: 4.5rem;
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: 200;
     margin-right: 32px;
   }
 </style>

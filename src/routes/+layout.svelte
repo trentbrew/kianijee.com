@@ -9,7 +9,6 @@
   const scrollData = scroll
 
   onMount(() => {
-    console.log('mounted layout')
     lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
       scrollData.update(state => ({
         value: scroll,
