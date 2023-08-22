@@ -109,15 +109,6 @@
     position: absolute;
   }
 
-  span {
-    font-family: 'League Gothic', sans-serif;
-    font-size: 3.5rem;
-    opacity: 0;
-    color: white;
-    mix-blend-mode: difference;
-    animation: text-delay 400ms ease forwards 200ms;
-  }
-
   @keyframes text-delay {
     from {
       opacity: 0;
@@ -184,11 +175,10 @@
   }
 
   .g-cursor_hint .g-cursor__point {
-    backdrop-filter: contrast(1.3);
-    width: 300px;
-    height: 300px;
-    margin-left: -150px;
-    margin-top: -150px;
+    width: 160px;
+    height: 160px;
+    margin-left: -80px;
+    margin-top: -80px;
     transition-delay: 1s;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0s;
@@ -196,11 +186,20 @@
 
   .g-cursor_click_hint .g-cursor__point {
     backdrop-filter: contrast(1.3);
-    width: 280px;
-    height: 280px;
-    margin-left: -140px;
-    margin-top: -140px;
+    width: 140px;
+    height: 140px;
+    margin-left: -70px;
+    margin-top: -70px;
     transition: margin 0.4s ease, width 0.4s ease, height 0.4s ease,
       opacity 0.4s ease, transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  span {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 1.8rem;
+    opacity: 0;
+    color: white;
+    mix-blend-mode: difference;
+    animation: text-delay 400ms ease forwards 200ms;
   }
 </style>

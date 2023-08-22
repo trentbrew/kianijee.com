@@ -7,7 +7,7 @@
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/bzgm69ccc4729q5/1_3_Ydy91D0D8I.png?token=',
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/bzgm69ccc4729q5/1_4_RrKi1ppHlv.png?token=',
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/bzgm69ccc4729q5/1_5_hrkl5ANplx.png?token=',
-    'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/bzgm69ccc4729q5/1_6_27sz7WSk0X.png?token=',
+    'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/bzgm69ccc4729q5/1_6_dzFm049Ncb.png?token=',
   ]
 </script>
 

@@ -194,7 +194,7 @@
             class="menu-item {`menu-item-${i}`} text-2xl font-bold text-white duration-300 cursor-pointer opacity-0"
             on:click={handleAnchorClick}
           >
-            <span class="absolute w-full left-0 pr-64 {`menu-item-text-${i}`}">
+            <span class="absolute w-full left-0 pr-0 {`menu-item-text-${i}`}">
               <span class="hoverable hover:opacity-50">
                 {item.name}
               </span>
@@ -208,7 +208,10 @@
 
 <style>
   a {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'League Gothic', sans-serif;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
     font-size: 4.5rem;
     line-height: 1.2;
     font-weight: 200;

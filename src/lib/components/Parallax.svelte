@@ -12,28 +12,26 @@
     mounted = true
   })
 
-  $: parallax = index => {
-    if (mounted) {
-      console.log($scroll)
-      const img = document.getElementById(`image-${index}`)
-      const client = document.documentElement.clientHeight
-      const getHeight = () => (img.height > client ? img.height : client)
-      const getOffset = () => ($scroll.value - img.offsetTop) / 2
-      return `height: ${getHeight()}px; object-position: 50% ${getOffset()}px;`
-    }
-  }
+  // $: parallax = index => {
+  //   if (mounted) {
+  //     const img = document.getElementById(`image-${index}`)
+  //     const top = img.offsetTop
+  //     console.log(top, $scroll.value)
+  //     const height = img.naturalHeight
+  //     const getOffset = () => ($scroll.value - top) / 1
+  //     return `object-position: 50% ${getOffset()}px;`
+  //   }
+  // }
 </script>
 
 <Back href="/" />
 <div class="scroll-container">
   {#each images as src, i}
     {#if src}
-      <img
-        {src}
+      <div
         id={`image-${i}`}
-        class="scroll-area object-cover w-screen h-full"
-        style={parallax(i)}
-        alt="work"
+        class="scroll-area"
+        style={`background-image: url(${src})`}
       />
     {/if}
   {/each}
@@ -46,7 +44,13 @@
   }
 
   .scroll-area {
+    width: 100vw;
+    height: 100vh;
     scroll-snap-align: start;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   .scroll-container,
