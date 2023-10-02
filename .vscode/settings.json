@@ -1,5 +1,6 @@
 {
   "nuxt.isNuxtApp": false,
   "editor.defaultFormatter": "svelte.svelte-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Orion"
 }

@@ -5,6 +5,7 @@
   import ScrollTrigger from 'gsap/ScrollTrigger'
   import Hero from '$lib/images/landing.gif'
   import Wordmark from '$lib/components/Wordmark.svelte'
+  import Marquee from '$lib/components/Marquee.svelte'
   import Footer from '$lib/components/Footer.svelte'
 
   gsap.registerPlugin(ScrollTrigger)
@@ -16,16 +17,6 @@
   }
 
   onMount(() => {
-    gsap.set('.marquee__inner', { xPercent: -50 }),
-      gsap
-        .to('.marquee__part', {
-          xPercent: -100,
-          repeat: -1,
-          duration: 8,
-          ease: 'linear',
-        })
-        .totalProgress(0.5)
-
     const tl = gsap.timeline({
       scrollTrigger: {
         start: 'top top',
@@ -74,30 +65,9 @@
       </div>
     </section>
   </section>
-  <section id="marquee" class="marquee">
-    <div class="marquee__inner" aria-hidden="true" ref="inner">
-      <div class="marquee__part">
-        GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
-      </div>
-      <div class="marquee__part">
-        GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
-      </div>
-      <div class="marquee__part">
-        GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
-      </div>
-      <div class="marquee__part">
-        GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
-      </div>
-      <div class="marquee__part">
-        GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-        &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
-      </div>
-    </div>
-  </section>
+
+  <Marquee />
+
   <div
     class="bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/gradient_Mj25u03Pwm.png?token=)]"
   >
@@ -128,17 +98,20 @@
         </a>
       </div>
     </section>
+
     <section class="pt-10">
       <div
         class="aspect-video w-full rounded-[56px] bg-cover bg-center bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/thumb_FSWVC7yzWF.png?token=)]"
       />
     </section>
+
     <section class="pt-10">
       <div
         data-hover-hint="shop soon"
         class="w-full h-[60vh] rounded-[56px] bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/shop_preview_qXabGzs55y.png?token=)]"
       />
     </section>
+
     <div class="mt-10 pb-10">
       <Footer />
     </div>
@@ -176,30 +149,6 @@
   #profile {
     will-change: background-position;
     font-family: 'Kameron', serif;
-  }
-  .marquee__part {
-    flex-shrink: 0;
-    padding: 12px 0px;
-    font-smooth: always;
-    font-family: 'League Gothic', sans-serif;
-  }
-
-  .marquee {
-    background: white;
-    color: black;
-    text-transform: uppercase;
-    font-size: 3vw;
-    position: relative;
-    overflow: hidden;
-    z-index: -1;
-  }
-
-  .marquee__inner {
-    -webkit-font-smoothing: antialiased;
-    width: fit-content;
-    display: flex;
-    flex: auto;
-    flex-direction: row;
   }
 
   img {
