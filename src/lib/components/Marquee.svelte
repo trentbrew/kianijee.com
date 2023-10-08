@@ -55,7 +55,7 @@
     font-size: 3vw;
     position: relative;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1;
   }
 
   .marquee__inner {

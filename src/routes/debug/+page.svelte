@@ -1,9 +1,8 @@
 <script>
-  import Zoomer from '$lib/components/Zoomer.svelte'
-  import Tracks from '$lib/components/Tracks.svelte'
-  import Parallax from '$lib/components/Parallax.svelte'
+  import Marquee from '$lib/components/Marquee.svelte'
 </script>
 
-<div class="w-screen h-screen bg-white">
-  <Parallax />
-</div>
+<main class="w-screen h-screen z-10 bg-gray-400">
+  <h1>this is the marquee</h1>
+  <Marquee />
+</main>
