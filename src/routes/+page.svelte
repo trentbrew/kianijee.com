@@ -69,7 +69,7 @@
   <Marquee />
 
   <div
-    class="bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/gradient_Mj25u03Pwm.png?token=)]"
+    class="bg-cover bg- bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/s0t0224hi3qeyrf/gradient2_9hbiSae58f.png?token=)]"
   >
     <section id="_work" class=" w-full">
       <div class="flex flex-col gap-6">
@@ -185,7 +185,10 @@
       radial-gradient(8px 8px, yellow, white),
       radial-gradient(8px 8px, magenta, white);
     background-size: 8px 8px;
-    background-position: 0 -3px, -2px 0, 2px 0;
+    background-position:
+      0 -3px,
+      -2px 0,
+      2px 0;
     mix-blend-mode: screen;
     pointer-events: none;
     transform: rotate(11.25deg);
@@ -195,7 +198,8 @@
   }
 
   #hero-overlay {
-    animation: darken 21s forwards;
+    /* darken 21s forwards */
+    animation: darken 16s forwards;
   }
 
   @keyframes darken {
