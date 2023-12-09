@@ -1,6 +1,5 @@
 <script>
   import Scroller from '@sveltejs/svelte-scroller'
-
   let index, offset, progress
 </script>
 

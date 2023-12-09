@@ -15,27 +15,29 @@
   })
 </script>
 
+<!-- ART DIRECTOR / MULTIDISCIPLINARY ARTIST / FABRICATION -->
+
 <div id="marquee" class="marquee">
   <div class="marquee__inner" aria-hidden="true" ref="inner">
     <div class="marquee__part">
-      GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-      &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
+      ART DIRECTOR &nbsp; &nbsp; MULTIDISCIPLINARY ARTIST &nbsp; &nbsp;
+      FABRICATION &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
     </div>
     <div class="marquee__part">
-      GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-      &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
+      ART DIRECTOR &nbsp; &nbsp; MULTIDISCIPLINARY ARTIST &nbsp; &nbsp;
+      FABRICATION &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
     </div>
     <div class="marquee__part">
-      GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-      &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
+      ART DIRECTOR &nbsp; &nbsp; MULTIDISCIPLINARY ARTIST &nbsp; &nbsp;
+      FABRICATION &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
     </div>
     <div class="marquee__part">
-      GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-      &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
+      ART DIRECTOR &nbsp; &nbsp; MULTIDISCIPLINARY ARTIST &nbsp; &nbsp;
+      FABRICATION &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
     </div>
     <div class="marquee__part">
-      GRAPHIC DESIGNER &nbsp; &nbsp; ART DIRECTOR &nbsp; &nbsp; PRINT MAKER
-      &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
+      ART DIRECTOR &nbsp; &nbsp; MULTIDISCIPLINARY ARTIST &nbsp; &nbsp;
+      FABRICATION &nbsp; &nbsp; CUSTOM FABRICATION &nbsp; &nbsp;
     </div>
   </div>
 </div>
