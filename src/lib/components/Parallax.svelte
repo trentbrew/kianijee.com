@@ -25,7 +25,7 @@
 </script>
 
 <Back href="/" />
-<div class="scroll-container">
+<div class="scroll-container bg-black">
   {#each images as src, i}
     {#if src}
       <div
