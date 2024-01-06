@@ -50,7 +50,13 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+  }
+
+  @media (max-width: 600px) {
+    .scroll-area {
+      background-attachment: normal;
+    }
   }
 
   .scroll-container,
