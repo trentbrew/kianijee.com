@@ -3,7 +3,7 @@
   import { scroll } from './store.js'
   import gsap from 'gsap'
   import ScrollTrigger from 'gsap/ScrollTrigger'
-  import Hero from '$lib/images/landing.gif'
+  import Hero from '$lib/images/landing_compressed.gif'
   import Wordmark from '$lib/components/Wordmark.svelte'
   import Marquee from '$lib/components/Marquee.svelte'
   import Footer from '$lib/components/Footer.svelte'
