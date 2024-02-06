@@ -1,5 +1,11 @@
 <script>
+  import { onMount } from 'svelte'
   import Parallax from '$lib/components/Parallax.svelte'
+
+  onMount(() => {
+    console.log('scrolling to top of page...')
+    window.scrollTo(0, 0)
+  })
 
   const images = [
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/ak09rb3bdh6bj3e/image_76_P54hgI4IDy.png?token=',

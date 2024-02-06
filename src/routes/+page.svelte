@@ -152,7 +152,7 @@
   }
 
   img {
-    animation: animation-overlay 12s forwards;
+    animation: animation-overlay 8s forwards;
   }
   .halftone-wrapper {
     background: white;
@@ -169,7 +169,7 @@
 
   .halftone > * {
     filter: brightness(0.5) blur(3px);
-    animation: 14s animation-filter forwards cubic-bezier(0.65, 0, 0.35, 1);
+    animation: 10s animation-filter forwards cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .halftone::after {
@@ -193,13 +193,13 @@
     pointer-events: none;
     transform: rotate(11.25deg);
     transition: 2s ease-in-out transform;
+    animation: 8s animation-overlay forwards ease-out;
     z-index: 1;
-    animation: 12s animation-overlay forwards ease-out;
   }
 
   #hero-overlay {
     /* darken 21s forwards */
-    animation: darken 16s forwards;
+    animation: darken 12s forwards;
   }
 
   @keyframes darken {

@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import { scroll } from '../../routes/store.js'
   import Back from '$lib/components/Back.svelte'
+  import { navigating } from '$app/stores'
 
   export let images
 
@@ -11,6 +12,10 @@
   onMount(() => {
     mounted = true
   })
+
+  $: if ($navigating) {
+    window.scrollTo(0, 0)
+  }
 
   // $: parallax = index => {
   //   if (mounted) {
