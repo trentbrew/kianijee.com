@@ -55,7 +55,8 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 80%;
+    background-color: white;
   }
 
   @media (max-width: 600px) {

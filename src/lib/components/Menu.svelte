@@ -160,7 +160,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   id="menu-toggle"
-  class="hoverable bg-black fixed rounded-full h-12 w-12 top-8 right-8 z-[101] cursor-pointer hover:scale-[1.4] opacity-0 flex justify-center items-center"
+  class="hoverable bg-black fixed rounded-full h-12 w-12 top-16 right-16 z-[101] cursor-pointer hover:scale-[1.4] opacity-0 flex justify-center items-center"
   on:click={toggleMenu}
   on:keydown={handleKeydown}
 >
