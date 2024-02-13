@@ -46,7 +46,7 @@
 <div>
   <section id="_home" class="flex w-full h-screen justify-center items-center">
     <section id="hero" class="absolute z-50 pointer-events-none">
-      <Wordmark />
+      <!-- <Wordmark /> -->
     </section>
     <section id="backdrop" class="z-[-1] fixed">
       <div
@@ -169,7 +169,7 @@
 
   .halftone > * {
     filter: brightness(0.5) blur(3px);
-    animation: 10s animation-filter forwards cubic-bezier(0.65, 0, 0.35, 1);
+    animation: 6s animation-filter forwards cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   .halftone::after {
@@ -193,7 +193,7 @@
     pointer-events: none;
     transform: rotate(11.25deg);
     transition: 2s ease-in-out transform;
-    animation: 8s animation-overlay forwards ease-out;
+    animation: 6s animation-overlay forwards ease-out;
     z-index: 1;
   }
 

@@ -56,6 +56,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
+    max-height: 80vh;
     /* max-height: 80vh; */
     background-color: white;
     aspect-ratio: 16 / 9 !important;
