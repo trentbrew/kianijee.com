@@ -35,7 +35,7 @@
     {#if src}
       <div
         id={`image-${i}`}
-        class="scroll-area"
+        class="scroll-area aspect-video"
         style={`background-image: url(${src})`}
       />
     {/if}
@@ -56,7 +56,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
+    /* max-height: 80vh; */
     background-color: white;
+    aspect-ratio: 16 / 9 !important;
   }
 
   @media (max-width: 600px) {
