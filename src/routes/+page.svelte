@@ -46,7 +46,7 @@
 <div>
   <section id="_home" class="flex w-full h-screen justify-center items-center">
     <section id="hero" class="absolute z-50 pointer-events-none">
-      <!-- <Wordmark /> -->
+      <Wordmark />
     </section>
     <section id="backdrop" class="z-[-1] fixed">
       <div
