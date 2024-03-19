@@ -92,7 +92,7 @@
         <a href="#" class="w-full duration-200 hover:brightness-100">
           <div
             style={parallax(window.innerHeight + 1688, 0.2)}
-            data-hover-hint="process"
+            data-hover-hint="practice"
             class="rounded-b-[56px] w-full h-[500px] bg-no-repeat bg-cover bg-[url(https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/9f1yyl0sj1rw6q8/work_b_BAM0DHq49c.png?token=)]"
           />
         </a>
