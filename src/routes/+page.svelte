@@ -89,7 +89,7 @@
             />
           </a>
         </div>
-        <a href="#" class="w-full duration-200 hover:brightness-100">
+        <a href="/practice" class="w-full duration-200 hover:brightness-100">
           <div
             style={parallax(window.innerHeight + 1688, 0.2)}
             data-hover-hint="practice"

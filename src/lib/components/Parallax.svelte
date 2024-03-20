@@ -51,15 +51,13 @@
   .scroll-area {
     width: 100vw;
     height: 100vh;
+    aspect-ratio: 16 / 9 !important;
     scroll-snap-align: start;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 80%;
-    max-height: 80vh;
-    /* max-height: 80vh; */
+    background-size: 75%;
     background-color: white;
-    aspect-ratio: 16 / 9 !important;
   }
 
   @media (max-width: 600px) {
