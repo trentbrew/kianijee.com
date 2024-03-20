@@ -168,9 +168,9 @@
       <a href="#" class="underline">
         <li class="hoverable">Art Director Resume</li>
       </a>
-      <a href="#" class="underline">
+      <!-- <a href="#" class="underline">
         <li class="hoverable">Construction Resume</li>
-      </a>
+      </a> -->
       <br />
       <br />
       <a href="https://trentbrew.com" class="underline">
@@ -212,5 +212,9 @@
 <style>
   li:hover {
     opacity: 0.5;
+  }
+
+  ul {
+    list-style-type: none;
   }
 </style>
