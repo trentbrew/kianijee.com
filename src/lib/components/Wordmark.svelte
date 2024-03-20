@@ -20,7 +20,7 @@
 
 <img
   style={`opacity: ${appear ? 1 : 0.01}`}
-  class="scale-[1]"
+  width="80%"
   src={currentImg}
   alt="Wordmark"
 />
