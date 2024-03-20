@@ -5,9 +5,9 @@
   import Icon from '$lib/components/Icon.svelte'
 
   const items = [
-    { name: 'Home', link: '#_home' },
+    { name: 'Home', link: '/' },
     { name: 'Work', link: '#_work' },
-    { name: 'About', link: '#_about' },
+    { name: 'About', link: '/about' },
     { name: 'Shop', link: '#_shop' },
     { name: 'Contact', link: '#_contact' },
   ]
