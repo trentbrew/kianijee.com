@@ -177,7 +177,8 @@
   class="fixed rounded-full h-12 w-12 top-8 right-8 z-[99] duration-300"
 />
 <div
-  class="fixed top-0 left-0 w-full h-screen backdrop-blur-[64px] backdrop-brightness-[0.4] duration-[400ms] z-[100] {open
+  style="backdrop-filter: blur(64px);"
+  class="fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-brightness-[0.4] duration-[400ms] z-[100] {open
     ? 'opacity-1'
     : 'opacity-0 pointer-events-none'}"
 />
@@ -186,7 +187,7 @@
     id="menu-items"
     class="fixed w-screen h-screen top-0 left flex justify-end items-center pr-8 pb-8 z-[100] text-right"
   >
-    <ul>
+    <ul class="list-none">
       {#each items as item, i}
         <li class="ease-in-out">
           <a
