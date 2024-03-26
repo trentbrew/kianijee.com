@@ -10,7 +10,6 @@
   const images = [
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/ak09rb3bdh6bj3e/1IGi4TQytIa_FwuCq1IdZ4.png?token=',
 
-    'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/ak09rb3bdh6bj3e/17R95KgJXEm_9WbBvAOiHK.png?token=',
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/ak09rb3bdh6bj3e/3WMNB5Od6U5_ZxqxoVEVxU.png?token=',
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/ak09rb3bdh6bj3e/2XAW74SU1Ec_9ROc8sEzqu.png?token=',
     'https://trentbrew.pockethost.io/api/files/swvnum16u65or8w/ak09rb3bdh6bj3e/4oIQ6emgZ2Y_IZPSuTvosR.png?token=', // end of TGI
