@@ -40,4 +40,6 @@
   <meta name="description" content="Professional Work" />
 </svelte:head>
 
-<Parallax {images} />
+<div class="contrast-[120%] saturation-[120%]">
+  <Parallax {images} />
+</div>

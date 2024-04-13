@@ -105,6 +105,14 @@
     else openMenu()
   }
 
+  function handleClick(event) {
+    if (['#'].includes(event.currentTarget.href)) {
+      handleAnchorClick(event)
+    } else {
+      location.href = event.currentTarget.href
+    }
+  }
+
   function handleAnchorClick(event) {
     closeMenu()
     event.preventDefault()
@@ -193,7 +201,7 @@
           <a
             href={item.link}
             class="menu-item {`menu-item-${i}`} text-2xl font-bold text-white duration-300 cursor-pointer opacity-0"
-            on:click={handleAnchorClick}
+            on:click|preventDefault={handleClick}
           >
             <span class="absolute w-full left-0 pr-0 {`menu-item-text-${i}`}">
               <span class="hoverable hover:opacity-50">
