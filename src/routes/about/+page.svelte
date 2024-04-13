@@ -56,11 +56,20 @@
             >
               @jordy.png
             </a>
+            <br />
+            Edited by: Zakia Rowlett
+            <br />
+            <a
+              class="hoverable text-white font-bold hover:underline"
+              href="https://www.instagram.com/p/Cw522GZPXB2/?img_index=1"
+            >
+              @arealh00t_
+            </a>
           </p>
           <img src={zakia} alt="zakia" class="z-[99]" />
         </div>
         <div
-          class="bg-[#000000bb] w-full mt-[-75px] p-40 text-white montserrat text-lg flex flex-col gap-0 h-full"
+          class="bg-[#000000bb] w-full mt-[-75px] p-40 text-white montserrat text-lg flex flex-col gap-0 h-full mt-[200vh]"
           style="backdrop-filter: blur(64px);"
         >
           <!-- icon section -->
