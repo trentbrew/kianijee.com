@@ -10,8 +10,8 @@
   import icon2 from '$lib/images/icons/icon2.png'
   import icon3 from '$lib/images/icons/icon3.png'
 
+  import logo from '$lib/images/svgs/logo_alt.png'
   import contact from '$lib/images/svgs/contact.svg'
-  import logo from '$lib/images/svgs/logo.svg'
   import subscribe from '$lib/images/svgs/subscribe.svg'
   import resume from '$lib/images/svgs/resume.svg'
 
@@ -61,6 +61,7 @@
           class="bg-[#000000bb] w-full min-h-[300vh] mt-[-75px] p-40 text-white montserrat text-lg flex flex-col gap-0"
           style="backdrop-filter: blur(64px);"
         >
+          <!-- icon section -->
           <div class="bg-transparent">
             <div class="w-full flex gap-12 justify-between p-12 items-center">
               <div
@@ -110,15 +111,56 @@
               </div>
             </div>
           </div>
-          <div class="bg-transparent mt-64 w-full">
-            <div class="flex gap-2 w-full">
-              <div class="bg-orange-500 w-full">contact</div>
-              <div class="h-[200px] w-[200px] bg-red-500">
-                <img src={logo} alt="logo" />
+
+          <!-- contact, subscribe, resume section -->
+          <div
+            class="bg-transparent mt-40 w-full flex justify-center flex-col items-start"
+          >
+            <div class="flex gap-2 w-full justify-center items-center">
+              <div>
+                <a href="/contact">
+                  <img
+                    src={contact}
+                    alt="contact"
+                    class="h-[150px] pb-[12px] border-red-500 border-b-[2px] hoverable"
+                  />
+                </a>
               </div>
-              <div class="bg-green-500 w-full">subscribe</div>
-              <div class="bg-yellow-500 w-full">resume</div>
+              <div class="h-[200px] w-[200px">
+                <img
+                  src={logo}
+                  alt="logo"
+                  class="w-[150px] h-[150px] mx-4 mt-4"
+                />
+              </div>
+              <div class="flex gap-6">
+                <div>
+                  <a href="/subscribe">
+                    <img
+                      src={subscribe}
+                      alt="subscribe"
+                      class="h-[150px] pb-[12px] border-[#3285FF] border-b-[2px] hoverable"
+                    />
+                  </a>
+                </div>
+                <div class="h-[150px] w-[2px] bg-[#3285FF]"></div>
+                <div>
+                  <a href="/resume">
+                    <img
+                      src={resume}
+                      alt="resume"
+                      class="h-[150px] pb-[12px] border-[#3285FF] border-b-[2px] hoverable"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
+            <p class="pl-12 kameron">
+              Please send all inquiries, questions, referrals, and love to this
+              email. Subscribe to stay in touch, and up to date on things like
+              commission status, behind the scenes, and upcoming creative
+              endeavors.
+            </p>
           </div>
         </div>
       </div>
