@@ -35,7 +35,7 @@
 </svelte:head>
 
 <div class="noisy h-full fixed top-0 left-0" />
-<section id="profile" class="w-full h-[400vh]">
+<section id="profile" class="w-full h-[300vh]">
   <div
     class="w-full h-full bg-cover"
     style={`background-image: url(${Profile}); ${parallax(1200)}`}
