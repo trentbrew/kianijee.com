@@ -15,6 +15,8 @@
   import subscribe from '$lib/images/svgs/subscribe.svg'
   import resume from '$lib/images/svgs/resume.svg'
 
+  import faq from '$lib/images/svgs/faq.svg'
+
   let parallax
   let scrollHeight
 
@@ -33,7 +35,7 @@
 </svelte:head>
 
 <div class="noisy h-full fixed top-0 left-0" />
-<section id="profile" class="w-full h-[300vh]">
+<section id="profile" class="w-full h-[400vh]">
   <div
     class="w-full h-full bg-cover"
     style={`background-image: url(${Profile}); ${parallax(1200)}`}
@@ -42,7 +44,7 @@
       class="overflow-hidden absolute w-full"
       style="height: {scrollHeight}px"
     >
-      <div class="content">
+      <div class="content h-[600vh]">
         <div class="w-full h-[75vh]"></div>
         <div class="flex w-full justify-between items-center px-12">
           <p class="kameron text-white text-lg mt-[-42px]">
@@ -58,7 +60,7 @@
           <img src={zakia} alt="zakia" class="z-[99]" />
         </div>
         <div
-          class="bg-[#000000bb] w-full min-h-[300vh] mt-[-75px] p-40 text-white montserrat text-lg flex flex-col gap-0"
+          class="bg-[#000000bb] w-full mt-[-75px] p-40 text-white montserrat text-lg flex flex-col gap-0 h-full"
           style="backdrop-filter: blur(64px);"
         >
           <!-- icon section -->
@@ -118,7 +120,7 @@
           >
             <div class="flex gap-2 w-full justify-center items-center">
               <div>
-                <a href="/contact">
+                <a href="/contact" class="hover:opacity-50 duration-150">
                   <img
                     src={contact}
                     alt="contact"
@@ -135,7 +137,7 @@
               </div>
               <div class="flex gap-6">
                 <div>
-                  <a href="/subscribe">
+                  <a href="/subscribe" class="hover:opacity-50 duration-150">
                     <img
                       src={subscribe}
                       alt="subscribe"
@@ -145,7 +147,7 @@
                 </div>
                 <div class="h-[150px] w-[2px] bg-[#3285FF]"></div>
                 <div>
-                  <a href="/resume">
+                  <a href="/resume" class="hover:opacity-50 duration-150">
                     <img
                       src={resume}
                       alt="resume"
@@ -161,6 +163,12 @@
               commission status, behind the scenes, and upcoming creative
               endeavors.
             </p>
+          </div>
+
+          <!-- faq -->
+          <div>
+            <img src={faq} alt="faq" class="mt-64" />
+            <div class="h-[700px] bg-red-500">this is a bunch more info</div>
           </div>
         </div>
       </div>
