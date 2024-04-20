@@ -43,7 +43,7 @@
   <meta name="description" content="Zakia Rowlett" />
 </svelte:head>
 
-<div>
+<div class="pointer-events-none">
   <section id="_home" class="flex w-full h-screen justify-center items-center">
     <section
       id="hero"
