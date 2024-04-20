@@ -30,8 +30,8 @@
 </script>
 
 <div class="app">
-  <Cursor />
-  <Menu />
+  <!-- <Cursor /> -->
+  <!-- <Menu /> -->
   <main>
     <slot />
   </main>

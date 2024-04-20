@@ -9,6 +9,7 @@
 
 * {
   cursor: none !important;
+  overflow: hidden !important;
 }
 
 html {

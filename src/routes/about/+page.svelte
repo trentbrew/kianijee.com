@@ -61,9 +61,9 @@
             <br />
             <a
               class="hoverable text-white font-bold hover:underline"
-              href="https://www.instagram.com/p/Cw522GZPXB2/?img_index=1"
+              href="https://www.instagram.com/longlyfejourney"
             >
-              @arealh00t_
+              @/longlyfejourney
             </a>
           </p>
           <img src={zakia} alt="zakia" class="z-[99]" />
