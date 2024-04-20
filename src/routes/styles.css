@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 * {
-  cursor: none !important;
+  /* cursor: none !important; */
   overflow: hidden !important;
 }
 
